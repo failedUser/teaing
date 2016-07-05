@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		222943BC4296BF05E85B7A58120F1B44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		3E026032D9BE1714B782BDC301F7FACC /* Pods-LetsTeasingUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 131259A116BFF3772E35B55304A24B57 /* Pods-LetsTeasingUITests-dummy.m */; };
+		951E065AC098740AA32F05BF907C1E38 /* Pods-LetsTeasing-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 451008C3CE082A756D65F82A519B1ED0 /* Pods-LetsTeasing-dummy.m */; };
+		B3E8A1152B8D2A4DB926516277112328 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B3E9F981360ADC0B6E1B89B514914FA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		C13FE0D16EE746427957EC56A4246C3C /* Pods-LetsTeasingTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6732F67F8D69864642C6144342BB0E60 /* Pods-LetsTeasingTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0485AA5206D7FDBA973C49752C50CFC5 /* Pods-LetsTeasing-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LetsTeasing-acknowledgements.markdown"; sourceTree = "<group>"; };
+		05B0F5DF2F07AD72915164D4C8018FCA /* NIMNetCallOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMNetCallOption.h; path = SDK/ExportHeaders/VAChat/NIMNetCallOption.h; sourceTree = "<group>"; };
+		06F467CBFA9830B3CA57CA6CBE5C124A /* NIMNetCallManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMNetCallManagerProtocol.h; path = SDK/ExportHeaders/VAChat/NIMNetCallManagerProtocol.h; sourceTree = "<group>"; };
+		0CB78CD8CB445C8A6D1A88D1B7128239 /* NIMChatManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMChatManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMChatManagerProtocol.h; sourceTree = "<group>"; };
+		0D2B50FB1A70C1703863FF49D26012D9 /* Pods-LetsTeasingTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LetsTeasingTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0EF9776CB9E2C3638D34121DA7092CDD /* NIMSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSDK.h; path = SDK/ExportHeaders/NIMSDK.h; sourceTree = "<group>"; };
+		1102267FADE8B4E877D8AC2F21FB71AC /* libnts.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libnts.a; path = SDK/Libs/libnts.a; sourceTree = "<group>"; };
+		131259A116BFF3772E35B55304A24B57 /* Pods-LetsTeasingUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LetsTeasingUITests-dummy.m"; sourceTree = "<group>"; };
+		14190098AFE4D60708F8A22F90D5B36A /* Pods-LetsTeasingUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LetsTeasingUITests-frameworks.sh"; sourceTree = "<group>"; };
+		1D66E898C4948E4FB5627960AF6B04DB /* NIMMessageObjectProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessageObjectProtocol.h; path = SDK/ExportHeaders/Protocol/NIMMessageObjectProtocol.h; sourceTree = "<group>"; };
+		24E29A3495A17EF93A07D537F2952E9E /* NIMSDKHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSDKHeaders.h; path = SDK/ExportHeaders/NIMSDKHeaders.h; sourceTree = "<group>"; };
+		24E556DA8C72883C955334EE53F3D4E1 /* NIMMessageReceipt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessageReceipt.h; path = SDK/ExportHeaders/NIMMessageReceipt.h; sourceTree = "<group>"; };
+		27E72A06F95CA3B31434B93638E26523 /* NIMTeamDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTeamDefs.h; path = SDK/ExportHeaders/Team/NIMTeamDefs.h; sourceTree = "<group>"; };
+		293395803A2650FDEEFDE6CF16093AC6 /* Pods-LetsTeasingUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LetsTeasingUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		296C9CA7EF7D260CBB0FC87B23D3B590 /* Pods-LetsTeasingUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LetsTeasingUITests-resources.sh"; sourceTree = "<group>"; };
+		2BDD35BF2BED48EECE44E05C699591C1 /* libnvs.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libnvs.a; path = SDK/Libs/libnvs.a; sourceTree = "<group>"; };
+		2D7172382F084E44E8FC5972DA4C5D73 /* NIMAudioObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMAudioObject.h; path = SDK/ExportHeaders/MessageObject/NIMAudioObject.h; sourceTree = "<group>"; };
+		32AE375BC5F604E0ED89C2162C52E876 /* libPods-LetsTeasingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LetsTeasingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FDB72B96CD77A2B3F9944F65BE8925 /* NIMVideoObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMVideoObject.h; path = SDK/ExportHeaders/MessageObject/NIMVideoObject.h; sourceTree = "<group>"; };
+		3EDA9BCED54D9A2B00E5B07134045492 /* NIMLoginClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMLoginClient.h; path = SDK/ExportHeaders/NIMLoginClient.h; sourceTree = "<group>"; };
+		3EDB4104D646BE2C356FE0DA3B21ACC7 /* NIMMessageSearchOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessageSearchOption.h; path = SDK/ExportHeaders/NIMMessageSearchOption.h; sourceTree = "<group>"; };
+		451008C3CE082A756D65F82A519B1ED0 /* Pods-LetsTeasing-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LetsTeasing-dummy.m"; sourceTree = "<group>"; };
+		46D6AC7431AC11C5ECB8FBE96C017B62 /* NIMImageObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMImageObject.h; path = SDK/ExportHeaders/MessageObject/NIMImageObject.h; sourceTree = "<group>"; };
+		4FB463DEE3DFEBCAE81DACF1420E14E1 /* NIMMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessage.h; path = SDK/ExportHeaders/NIMMessage.h; sourceTree = "<group>"; };
+		5126592AFA309C80AF8E61A5E5812F89 /* NIMChatroomMemberRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMChatroomMemberRequest.h; path = SDK/ExportHeaders/Chatroom/NIMChatroomMemberRequest.h; sourceTree = "<group>"; };
+		51336027D86D5F14FE71B0B59A1E373F /* NIMChatroom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMChatroom.h; path = SDK/ExportHeaders/Chatroom/NIMChatroom.h; sourceTree = "<group>"; };
+		524F71678615CFD6708CE07D8E02A82C /* Pods-LetsTeasing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LetsTeasing.debug.xcconfig"; sourceTree = "<group>"; };
+		527A6B5D07636BC32E1AE3326AF51D5D /* NIMTeamManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTeamManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMTeamManagerProtocol.h; sourceTree = "<group>"; };
+		540AFA2C9E12AA71CE732DD2799B162D /* NIMNotificationObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMNotificationObject.h; path = SDK/ExportHeaders/MessageObject/NIMNotificationObject.h; sourceTree = "<group>"; };
+		583649C92CB5D2D05AACB94A50D63788 /* NIMRTSOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMRTSOption.h; path = SDK/ExportHeaders/VAChat/NIMRTSOption.h; sourceTree = "<group>"; };
+		591BCFB286F6494D2193C291D6F4EC5B /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = SDK/Libs/libcrypto.a; sourceTree = "<group>"; };
+		5A4761B346071CC0275D5C6030A2CDDD /* NIMNetCallNotificationContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMNetCallNotificationContent.h; path = SDK/ExportHeaders/MessageObject/NotificationContent/NIMNetCallNotificationContent.h; sourceTree = "<group>"; };
+		5C5C68C09C7288A587E11D37504B4A03 /* Pods-LetsTeasingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LetsTeasingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CADC5FC9AA74DAB2083C87CCF0D66BC /* libPods-LetsTeasing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LetsTeasing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C221D3B4EB1C2DF1E900A145F2FC8B /* NIMApnsManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMApnsManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMApnsManagerProtocol.h; sourceTree = "<group>"; };
+		6732F67F8D69864642C6144342BB0E60 /* Pods-LetsTeasingTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LetsTeasingTests-dummy.m"; sourceTree = "<group>"; };
+		68A48163C3365C66B1194BAB3CDCD668 /* NIMSystemNotificationManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSystemNotificationManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMSystemNotificationManagerProtocol.h; sourceTree = "<group>"; };
+		68A5F89A9803F5C41B749D6CF95B2523 /* NIMTeam.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTeam.h; path = SDK/ExportHeaders/Team/NIMTeam.h; sourceTree = "<group>"; };
+		6EF2C81F03C1771413BBDD998FC47071 /* libopenh264.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopenh264.a; path = SDK/Libs/libopenh264.a; sourceTree = "<group>"; };
+		702222F9743E260E5193CD4366596C58 /* NIMCustomSystemNotificationSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMCustomSystemNotificationSetting.h; path = SDK/ExportHeaders/NIMCustomSystemNotificationSetting.h; sourceTree = "<group>"; };
+		7743736619030500C218FC0A82CEA02F /* NIMChatroomEnterRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMChatroomEnterRequest.h; path = SDK/ExportHeaders/Chatroom/NIMChatroomEnterRequest.h; sourceTree = "<group>"; };
+		7785FA2B998523CE1123537DDA66E4DA /* NIMUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMUser.h; path = SDK/ExportHeaders/NIMUser.h; sourceTree = "<group>"; };
+		7D66F8277B002AFA1D9B0B28A5F2AB1B /* NIMChatroomNotificationContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMChatroomNotificationContent.h; path = SDK/ExportHeaders/MessageObject/NotificationContent/NIMChatroomNotificationContent.h; sourceTree = "<group>"; };
+		831D3DF632ACE31F094BCA221BD6442C /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = SDK/Libs/libssl.a; sourceTree = "<group>"; };
+		84A5C2725F0A8154D6A35EFF9C31E834 /* Pods-LetsTeasingTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LetsTeasingTests-frameworks.sh"; sourceTree = "<group>"; };
+		863259B71FDD82FA32DC104946602FE3 /* Pods-LetsTeasingTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LetsTeasingTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		890F9563044978D2F6C70461CE3664BA /* Pods-LetsTeasing-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LetsTeasing-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93E4ED0E26DE58D29A5C0B3BFDE34DDF /* NIMGlobalDefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMGlobalDefs.h; path = SDK/ExportHeaders/NIMGlobalDefs.h; sourceTree = "<group>"; };
+		94403A6C80A6FD3F55059C80F6E6019A /* NIMRTSRecordingInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMRTSRecordingInfo.h; path = SDK/ExportHeaders/VAChat/NIMRTSRecordingInfo.h; sourceTree = "<group>"; };
+		9DD8F1820C054EDA24180BC46A99A72C /* NIMChatroomMember.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMChatroomMember.h; path = SDK/ExportHeaders/Chatroom/NIMChatroomMember.h; sourceTree = "<group>"; };
+		9DEA3C72E6B8EA7EE16CE1770D1AC8E4 /* NIMPushNotificationSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMPushNotificationSetting.h; path = SDK/ExportHeaders/NIMPushNotificationSetting.h; sourceTree = "<group>"; };
+		A1121EFDD5BC13EA5F2FC44F81E087D7 /* Pods-LetsTeasing-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LetsTeasing-frameworks.sh"; sourceTree = "<group>"; };
+		A54CC2146AA27711EBE1D158124627C0 /* NIMLocationObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMLocationObject.h; path = SDK/ExportHeaders/MessageObject/NIMLocationObject.h; sourceTree = "<group>"; };
+		A59DE9AB2CF2DE15EDD8B78A184E86B8 /* Pods-LetsTeasing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LetsTeasing.release.xcconfig"; sourceTree = "<group>"; };
+		AB1816AF919263A1B02399A3331BE4B9 /* NIMChatroomManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMChatroomManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMChatroomManagerProtocol.h; sourceTree = "<group>"; };
+		ADA5E53046384245ACF8C2CF40833296 /* libaacplus.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libaacplus.a; path = SDK/Libs/libaacplus.a; sourceTree = "<group>"; };
+		AE7E4F36CA5A6305EB0154618C6B071D /* NIMSystemNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSystemNotification.h; path = SDK/ExportHeaders/NIMSystemNotification.h; sourceTree = "<group>"; };
+		AEACAF0BD6C6C08A3A7CA3BC3E37048A /* Pods-LetsTeasingUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LetsTeasingUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B27536EC3EDE5C93D9B7E15F0CDEE1E9 /* NIMUserManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMUserManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMUserManagerProtocol.h; sourceTree = "<group>"; };
+		B700F41669E48B919E9853D787FC42A5 /* NIMMessageChatroomExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessageChatroomExtension.h; path = SDK/ExportHeaders/Chatroom/NIMMessageChatroomExtension.h; sourceTree = "<group>"; };
+		B8C610B185401B9578D547E1F69DFC4C /* NIMMessageSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMessageSetting.h; path = SDK/ExportHeaders/NIMMessageSetting.h; sourceTree = "<group>"; };
+		BC26FAC37590196CB0210F638D8E95EA /* NIMNetCallMeeting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMNetCallMeeting.h; path = SDK/ExportHeaders/VAChat/NIMNetCallMeeting.h; sourceTree = "<group>"; };
+		C134F022125B30C508255663FCBA6D99 /* NIMTeamNotificationContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTeamNotificationContent.h; path = SDK/ExportHeaders/MessageObject/NotificationContent/NIMTeamNotificationContent.h; sourceTree = "<group>"; };
+		C39383F1754F0EECDD74D710F765A416 /* NIMRTSManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMRTSManagerProtocol.h; path = SDK/ExportHeaders/VAChat/NIMRTSManagerProtocol.h; sourceTree = "<group>"; };
+		C6D6B887FFA08B1E42CDA83A0071D75B /* NIMSDKConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSDKConfig.h; path = SDK/ExportHeaders/NIMSDKConfig.h; sourceTree = "<group>"; };
+		C842C13E154A818A262FB3A4616CBDA5 /* NIMFileObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMFileObject.h; path = SDK/ExportHeaders/MessageObject/NIMFileObject.h; sourceTree = "<group>"; };
+		C95817D3B39D9F353BE8C6F82DC652FA /* NIMUnsupportedNotificationContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMUnsupportedNotificationContent.h; path = SDK/ExportHeaders/MessageObject/NotificationContent/NIMUnsupportedNotificationContent.h; sourceTree = "<group>"; };
+		CA83D52B9105E06A07C8591E250D5B2A /* NIMSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMSession.h; path = SDK/ExportHeaders/NIMSession.h; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CFF740B06F316F000D2CC87E27CBEB16 /* libNIMSDK.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libNIMSDK.a; path = SDK/libNIMSDK.a; sourceTree = "<group>"; };
+		D23EC106352ADBEB695AEA12167C9810 /* Pods-LetsTeasingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LetsTeasingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D6A236E2A78982606180A7E5B0847BB9 /* NIMMediaManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMMediaManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMMediaManagerProtocol.h; sourceTree = "<group>"; };
+		D6E423EE59821ACFD8D82EC5ACF1224E /* NIMConversationManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMConversationManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMConversationManagerProtocol.h; sourceTree = "<group>"; };
+		D94D738C77BBCD00295A772E8265AB7A /* NIMNotificationContent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMNotificationContent.h; path = SDK/ExportHeaders/MessageObject/NotificationContent/NIMNotificationContent.h; sourceTree = "<group>"; };
+		DBBB3096E7CD2E422ABE1D5F2105033F /* NIMResourceManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMResourceManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMResourceManagerProtocol.h; sourceTree = "<group>"; };
+		DC38CE44C869A8CCDEEC90159C8E04BD /* libevent.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libevent.a; path = SDK/Libs/libevent.a; sourceTree = "<group>"; };
+		E363F25AAD48E7570E9ECC8427897D4A /* Pods-LetsTeasingTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LetsTeasingTests-resources.sh"; sourceTree = "<group>"; };
+		E44F183CB395E7961DBC4474BAABFE6D /* NIMNetCallRecordingInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMNetCallRecordingInfo.h; path = SDK/ExportHeaders/VAChat/NIMNetCallRecordingInfo.h; sourceTree = "<group>"; };
+		EC769371B398F72CB9FD710C5653452E /* NIMRecentSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMRecentSession.h; path = SDK/ExportHeaders/NIMRecentSession.h; sourceTree = "<group>"; };
+		ECA84BF53E81BA3D1B6D8ABBB6A2D6DC /* NIMCreateTeamOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMCreateTeamOption.h; path = SDK/ExportHeaders/Team/NIMCreateTeamOption.h; sourceTree = "<group>"; };
+		ECE991AD897D04106923D3833611ED5A /* NIMCustomObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMCustomObject.h; path = SDK/ExportHeaders/MessageObject/NIMCustomObject.h; sourceTree = "<group>"; };
+		EE2080E115BF40B4E8A6B5BBA6D34DE9 /* Pods-LetsTeasingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LetsTeasingTests.release.xcconfig"; sourceTree = "<group>"; };
+		EE53E40566A429B681D52DEC983BB219 /* Pods-LetsTeasingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LetsTeasingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EFB175EC5B7B2C8FEF56FE405D9F3713 /* NIMTipObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTipObject.h; path = SDK/ExportHeaders/MessageObject/NIMTipObject.h; sourceTree = "<group>"; };
+		F039CD88107366EA060B471D7A258782 /* NIMTeamMember.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMTeamMember.h; path = SDK/ExportHeaders/Team/NIMTeamMember.h; sourceTree = "<group>"; };
+		F10651403654B2BA9A182B1FE3179CC2 /* libnio.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libnio.a; path = SDK/Libs/libnio.a; sourceTree = "<group>"; };
+		F2181520F097610DE9B9E222468894DA /* libPods-LetsTeasingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LetsTeasingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A4C59515B967EBB127C14AEAC3A2FE /* libopus.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopus.a; path = SDK/Libs/libopus.a; sourceTree = "<group>"; };
+		F4B9A1DBDCCBE11F6BFF4352A9DE0E29 /* NIMLoginManagerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NIMLoginManagerProtocol.h; path = SDK/ExportHeaders/Protocol/NIMLoginManagerProtocol.h; sourceTree = "<group>"; };
+		F619BFA3CDE3F2AEF0819A2AB50AABCD /* Pods-LetsTeasing-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LetsTeasing-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		189B43897CF47F63FEC9ADECA0306CAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3E8A1152B8D2A4DB926516277112328 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6E8AA84F4B36668FF3BA7D96BE8A2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3E9F981360ADC0B6E1B89B514914FA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69996C64AE26CFC2C00D0DD813CFDF30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222943BC4296BF05E85B7A58120F1B44 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		45AA0A91F5F4448A675AB006DCC0E2FE /* Pods-LetsTeasingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AEACAF0BD6C6C08A3A7CA3BC3E37048A /* Pods-LetsTeasingUITests-acknowledgements.markdown */,
+				293395803A2650FDEEFDE6CF16093AC6 /* Pods-LetsTeasingUITests-acknowledgements.plist */,
+				131259A116BFF3772E35B55304A24B57 /* Pods-LetsTeasingUITests-dummy.m */,
+				14190098AFE4D60708F8A22F90D5B36A /* Pods-LetsTeasingUITests-frameworks.sh */,
+				296C9CA7EF7D260CBB0FC87B23D3B590 /* Pods-LetsTeasingUITests-resources.sh */,
+				EE53E40566A429B681D52DEC983BB219 /* Pods-LetsTeasingUITests.debug.xcconfig */,
+				D23EC106352ADBEB695AEA12167C9810 /* Pods-LetsTeasingUITests.release.xcconfig */,
+			);
+			name = "Pods-LetsTeasingUITests";
+			path = "Target Support Files/Pods-LetsTeasingUITests";
+			sourceTree = "<group>";
+		};
+		4C5C8D3795672F357DC0024AE11DE7A5 /* NIMSDK */ = {
+			isa = PBXGroup;
+			children = (
+				60C221D3B4EB1C2DF1E900A145F2FC8B /* NIMApnsManagerProtocol.h */,
+				2D7172382F084E44E8FC5972DA4C5D73 /* NIMAudioObject.h */,
+				0CB78CD8CB445C8A6D1A88D1B7128239 /* NIMChatManagerProtocol.h */,
+				51336027D86D5F14FE71B0B59A1E373F /* NIMChatroom.h */,
+				7743736619030500C218FC0A82CEA02F /* NIMChatroomEnterRequest.h */,
+				AB1816AF919263A1B02399A3331BE4B9 /* NIMChatroomManagerProtocol.h */,
+				9DD8F1820C054EDA24180BC46A99A72C /* NIMChatroomMember.h */,
+				5126592AFA309C80AF8E61A5E5812F89 /* NIMChatroomMemberRequest.h */,
+				7D66F8277B002AFA1D9B0B28A5F2AB1B /* NIMChatroomNotificationContent.h */,
+				D6E423EE59821ACFD8D82EC5ACF1224E /* NIMConversationManagerProtocol.h */,
+				ECA84BF53E81BA3D1B6D8ABBB6A2D6DC /* NIMCreateTeamOption.h */,
+				ECE991AD897D04106923D3833611ED5A /* NIMCustomObject.h */,
+				702222F9743E260E5193CD4366596C58 /* NIMCustomSystemNotificationSetting.h */,
+				C842C13E154A818A262FB3A4616CBDA5 /* NIMFileObject.h */,
+				93E4ED0E26DE58D29A5C0B3BFDE34DDF /* NIMGlobalDefs.h */,
+				46D6AC7431AC11C5ECB8FBE96C017B62 /* NIMImageObject.h */,
+				A54CC2146AA27711EBE1D158124627C0 /* NIMLocationObject.h */,
+				3EDA9BCED54D9A2B00E5B07134045492 /* NIMLoginClient.h */,
+				F4B9A1DBDCCBE11F6BFF4352A9DE0E29 /* NIMLoginManagerProtocol.h */,
+				D6A236E2A78982606180A7E5B0847BB9 /* NIMMediaManagerProtocol.h */,
+				4FB463DEE3DFEBCAE81DACF1420E14E1 /* NIMMessage.h */,
+				B700F41669E48B919E9853D787FC42A5 /* NIMMessageChatroomExtension.h */,
+				1D66E898C4948E4FB5627960AF6B04DB /* NIMMessageObjectProtocol.h */,
+				24E556DA8C72883C955334EE53F3D4E1 /* NIMMessageReceipt.h */,
+				3EDB4104D646BE2C356FE0DA3B21ACC7 /* NIMMessageSearchOption.h */,
+				B8C610B185401B9578D547E1F69DFC4C /* NIMMessageSetting.h */,
+				06F467CBFA9830B3CA57CA6CBE5C124A /* NIMNetCallManagerProtocol.h */,
+				BC26FAC37590196CB0210F638D8E95EA /* NIMNetCallMeeting.h */,
+				5A4761B346071CC0275D5C6030A2CDDD /* NIMNetCallNotificationContent.h */,
+				05B0F5DF2F07AD72915164D4C8018FCA /* NIMNetCallOption.h */,
+				E44F183CB395E7961DBC4474BAABFE6D /* NIMNetCallRecordingInfo.h */,
+				D94D738C77BBCD00295A772E8265AB7A /* NIMNotificationContent.h */,
+				540AFA2C9E12AA71CE732DD2799B162D /* NIMNotificationObject.h */,
+				9DEA3C72E6B8EA7EE16CE1770D1AC8E4 /* NIMPushNotificationSetting.h */,
+				EC769371B398F72CB9FD710C5653452E /* NIMRecentSession.h */,
+				DBBB3096E7CD2E422ABE1D5F2105033F /* NIMResourceManagerProtocol.h */,
+				C39383F1754F0EECDD74D710F765A416 /* NIMRTSManagerProtocol.h */,
+				583649C92CB5D2D05AACB94A50D63788 /* NIMRTSOption.h */,
+				94403A6C80A6FD3F55059C80F6E6019A /* NIMRTSRecordingInfo.h */,
+				0EF9776CB9E2C3638D34121DA7092CDD /* NIMSDK.h */,
+				C6D6B887FFA08B1E42CDA83A0071D75B /* NIMSDKConfig.h */,
+				24E29A3495A17EF93A07D537F2952E9E /* NIMSDKHeaders.h */,
+				CA83D52B9105E06A07C8591E250D5B2A /* NIMSession.h */,
+				AE7E4F36CA5A6305EB0154618C6B071D /* NIMSystemNotification.h */,
+				68A48163C3365C66B1194BAB3CDCD668 /* NIMSystemNotificationManagerProtocol.h */,
+				68A5F89A9803F5C41B749D6CF95B2523 /* NIMTeam.h */,
+				27E72A06F95CA3B31434B93638E26523 /* NIMTeamDefs.h */,
+				527A6B5D07636BC32E1AE3326AF51D5D /* NIMTeamManagerProtocol.h */,
+				F039CD88107366EA060B471D7A258782 /* NIMTeamMember.h */,
+				C134F022125B30C508255663FCBA6D99 /* NIMTeamNotificationContent.h */,
+				EFB175EC5B7B2C8FEF56FE405D9F3713 /* NIMTipObject.h */,
+				C95817D3B39D9F353BE8C6F82DC652FA /* NIMUnsupportedNotificationContent.h */,
+				7785FA2B998523CE1123537DDA66E4DA /* NIMUser.h */,
+				B27536EC3EDE5C93D9B7E15F0CDEE1E9 /* NIMUserManagerProtocol.h */,
+				38FDB72B96CD77A2B3F9944F65BE8925 /* NIMVideoObject.h */,
+				ED1BF14B100E99C46B0F966B2C76FE57 /* Frameworks */,
+			);
+			path = NIMSDK;
+			sourceTree = "<group>";
+		};
+		68F43B22E1FE7F4D599C8351C524B41A /* Pods-LetsTeasing */ = {
+			isa = PBXGroup;
+			children = (
+				0485AA5206D7FDBA973C49752C50CFC5 /* Pods-LetsTeasing-acknowledgements.markdown */,
+				890F9563044978D2F6C70461CE3664BA /* Pods-LetsTeasing-acknowledgements.plist */,
+				451008C3CE082A756D65F82A519B1ED0 /* Pods-LetsTeasing-dummy.m */,
+				A1121EFDD5BC13EA5F2FC44F81E087D7 /* Pods-LetsTeasing-frameworks.sh */,
+				F619BFA3CDE3F2AEF0819A2AB50AABCD /* Pods-LetsTeasing-resources.sh */,
+				524F71678615CFD6708CE07D8E02A82C /* Pods-LetsTeasing.debug.xcconfig */,
+				A59DE9AB2CF2DE15EDD8B78A184E86B8 /* Pods-LetsTeasing.release.xcconfig */,
+			);
+			name = "Pods-LetsTeasing";
+			path = "Target Support Files/Pods-LetsTeasing";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C3325393BCD1882D1D1BCBB035D4B112 /* Pods */,
+				DEA4188086D4A27DC0910AC4BA9914E3 /* Products */,
+				F48101D3584140F0ED7B1FE8040D9412 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3325393BCD1882D1D1BCBB035D4B112 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C5C8D3795672F357DC0024AE11DE7A5 /* NIMSDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C4365F0867297E28B4CC380C1BCB7FD6 /* Pods-LetsTeasingTests */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B50FB1A70C1703863FF49D26012D9 /* Pods-LetsTeasingTests-acknowledgements.markdown */,
+				863259B71FDD82FA32DC104946602FE3 /* Pods-LetsTeasingTests-acknowledgements.plist */,
+				6732F67F8D69864642C6144342BB0E60 /* Pods-LetsTeasingTests-dummy.m */,
+				84A5C2725F0A8154D6A35EFF9C31E834 /* Pods-LetsTeasingTests-frameworks.sh */,
+				E363F25AAD48E7570E9ECC8427897D4A /* Pods-LetsTeasingTests-resources.sh */,
+				5C5C68C09C7288A587E11D37504B4A03 /* Pods-LetsTeasingTests.debug.xcconfig */,
+				EE2080E115BF40B4E8A6B5BBA6D34DE9 /* Pods-LetsTeasingTests.release.xcconfig */,
+			);
+			name = "Pods-LetsTeasingTests";
+			path = "Target Support Files/Pods-LetsTeasingTests";
+			sourceTree = "<group>";
+		};
+		DEA4188086D4A27DC0910AC4BA9914E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CADC5FC9AA74DAB2083C87CCF0D66BC /* libPods-LetsTeasing.a */,
+				32AE375BC5F604E0ED89C2162C52E876 /* libPods-LetsTeasingTests.a */,
+				F2181520F097610DE9B9E222468894DA /* libPods-LetsTeasingUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED1BF14B100E99C46B0F966B2C76FE57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADA5E53046384245ACF8C2CF40833296 /* libaacplus.a */,
+				591BCFB286F6494D2193C291D6F4EC5B /* libcrypto.a */,
+				DC38CE44C869A8CCDEEC90159C8E04BD /* libevent.a */,
+				CFF740B06F316F000D2CC87E27CBEB16 /* libNIMSDK.a */,
+				F10651403654B2BA9A182B1FE3179CC2 /* libnio.a */,
+				1102267FADE8B4E877D8AC2F21FB71AC /* libnts.a */,
+				2BDD35BF2BED48EECE44E05C699591C1 /* libnvs.a */,
+				6EF2C81F03C1771413BBDD998FC47071 /* libopenh264.a */,
+				F4A4C59515B967EBB127C14AEAC3A2FE /* libopus.a */,
+				831D3DF632ACE31F094BCA221BD6442C /* libssl.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F48101D3584140F0ED7B1FE8040D9412 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				68F43B22E1FE7F4D599C8351C524B41A /* Pods-LetsTeasing */,
+				C4365F0867297E28B4CC380C1BCB7FD6 /* Pods-LetsTeasingTests */,
+				45AA0A91F5F4448A675AB006DCC0E2FE /* Pods-LetsTeasingUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23DC1DB219CACEF4B34C2BA8DF9563D6 /* Pods-LetsTeasing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CDDFC5CCB9669DAC74E107BA68B5C17 /* Build configuration list for PBXNativeTarget "Pods-LetsTeasing" */;
+			buildPhases = (
+				1FB0C4A6065D42C95A6542BDF67D1F73 /* Sources */,
+				3E6E8AA84F4B36668FF3BA7D96BE8A2D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-LetsTeasing";
+			productName = "Pods-LetsTeasing";
+			productReference = 5CADC5FC9AA74DAB2083C87CCF0D66BC /* libPods-LetsTeasing.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B912E57B7EE3B8056B316EE2CA597996 /* Pods-LetsTeasingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A6472367E20DFAE50853AF2C20EBF19 /* Build configuration list for PBXNativeTarget "Pods-LetsTeasingTests" */;
+			buildPhases = (
+				A79B0CCFD4A20D54C0E67B6A74DC7FE3 /* Sources */,
+				189B43897CF47F63FEC9ADECA0306CAB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-LetsTeasingTests";
+			productName = "Pods-LetsTeasingTests";
+			productReference = 32AE375BC5F604E0ED89C2162C52E876 /* libPods-LetsTeasingTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EFA9C8DA6CCF8B046CCE94452C0651E3 /* Pods-LetsTeasingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB7F3CA2E9D7DCDE60A5B612B38750B1 /* Build configuration list for PBXNativeTarget "Pods-LetsTeasingUITests" */;
+			buildPhases = (
+				2C5B305BAE0E06940516D93BA8A8B9FD /* Sources */,
+				69996C64AE26CFC2C00D0DD813CFDF30 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-LetsTeasingUITests";
+			productName = "Pods-LetsTeasingUITests";
+			productReference = F2181520F097610DE9B9E222468894DA /* libPods-LetsTeasingUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = DEA4188086D4A27DC0910AC4BA9914E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23DC1DB219CACEF4B34C2BA8DF9563D6 /* Pods-LetsTeasing */,
+				B912E57B7EE3B8056B316EE2CA597996 /* Pods-LetsTeasingTests */,
+				EFA9C8DA6CCF8B046CCE94452C0651E3 /* Pods-LetsTeasingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FB0C4A6065D42C95A6542BDF67D1F73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				951E065AC098740AA32F05BF907C1E38 /* Pods-LetsTeasing-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C5B305BAE0E06940516D93BA8A8B9FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E026032D9BE1714B782BDC301F7FACC /* Pods-LetsTeasingUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A79B0CCFD4A20D54C0E67B6A74DC7FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13FE0D16EE746427957EC56A4246C3C /* Pods-LetsTeasingTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		38DEE61153F5170CFA5760A12ECDF44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE53E40566A429B681D52DEC983BB219 /* Pods-LetsTeasingUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CCBF6C5085B85FE1ED9D7132F4E1E86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D23EC106352ADBEB695AEA12167C9810 /* Pods-LetsTeasingUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		61EC947D5CC9BCAC75DE79E3D3498526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 524F71678615CFD6708CE07D8E02A82C /* Pods-LetsTeasing.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8218DBA8BC1DE265A22CEE0767410B86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A59DE9AB2CF2DE15EDD8B78A184E86B8 /* Pods-LetsTeasing.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B2BC07F791A2AC851086926AD256C9B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE2080E115BF40B4E8A6B5BBA6D34DE9 /* Pods-LetsTeasingTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D4CECD82B8200327B848AAE8D0E001B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5C68C09C7288A587E11D37504B4A03 /* Pods-LetsTeasingTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CDDFC5CCB9669DAC74E107BA68B5C17 /* Build configuration list for PBXNativeTarget "Pods-LetsTeasing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61EC947D5CC9BCAC75DE79E3D3498526 /* Debug */,
+				8218DBA8BC1DE265A22CEE0767410B86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A6472367E20DFAE50853AF2C20EBF19 /* Build configuration list for PBXNativeTarget "Pods-LetsTeasingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CECD82B8200327B848AAE8D0E001B4 /* Debug */,
+				B2BC07F791A2AC851086926AD256C9B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB7F3CA2E9D7DCDE60A5B612B38750B1 /* Build configuration list for PBXNativeTarget "Pods-LetsTeasingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38DEE61153F5170CFA5760A12ECDF44D /* Debug */,
+				4CCBF6C5085B85FE1ED9D7132F4E1E86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
