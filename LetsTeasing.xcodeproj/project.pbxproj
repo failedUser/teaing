@@ -58,6 +58,10 @@
 		1892F4701D2A401E00FA63E2 /* View_for_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892F46F1D2A401E00FA63E2 /* View_for_Text.m */; };
 		18B0C0A01D24E3D400E7BE2C /* YY_base_table.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B0C09F1D24E3D400E7BE2C /* YY_base_table.m */; };
 		18B0C1391D2537D500E7BE2C /* Personal_centerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B0C1381D2537D500E7BE2C /* Personal_centerViewController.m */; };
+		18E89D741D2C88D20058414A /* PersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E89D731D2C88D20058414A /* PersonalInfo.m */; };
+		18E89D7D1D2CE5070058414A /* changeName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E89D7C1D2CE5070058414A /* changeName.m */; };
+		18E89D801D2E0DFC0058414A /* AlertTextBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E89D7F1D2E0DFC0058414A /* AlertTextBaseView.m */; };
+		18E89D871D2EA7450058414A /* photoChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E89D861D2EA7450058414A /* photoChange.m */; };
 		18F3F3421D26411600857FF9 /* JCAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18F3F33F1D26411600857FF9 /* JCAlertView.bundle */; };
 		18F3F3431D26411600857FF9 /* JCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3F3411D26411600857FF9 /* JCAlertView.m */; };
 		18F3F3451D26415800857FF9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3F3441D26415800857FF9 /* Accelerate.framework */; };
@@ -166,6 +170,16 @@
 		18B0C09F1D24E3D400E7BE2C /* YY_base_table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YY_base_table.m; sourceTree = "<group>"; };
 		18B0C1371D2537D500E7BE2C /* Personal_centerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Personal_centerViewController.h; sourceTree = "<group>"; };
 		18B0C1381D2537D500E7BE2C /* Personal_centerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Personal_centerViewController.m; sourceTree = "<group>"; };
+		18E89D711D2BA7F20058414A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
+		18E89D721D2C88D20058414A /* PersonalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfo.h; sourceTree = "<group>"; };
+		18E89D731D2C88D20058414A /* PersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfo.m; sourceTree = "<group>"; };
+		18E89D7B1D2CE5070058414A /* changeName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = changeName.h; sourceTree = "<group>"; };
+		18E89D7C1D2CE5070058414A /* changeName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = changeName.m; sourceTree = "<group>"; };
+		18E89D7E1D2E0DFC0058414A /* AlertTextBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTextBaseView.h; sourceTree = "<group>"; };
+		18E89D7F1D2E0DFC0058414A /* AlertTextBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertTextBaseView.m; sourceTree = "<group>"; };
+		18E89D851D2EA7450058414A /* photoChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoChange.h; sourceTree = "<group>"; };
+		18E89D861D2EA7450058414A /* photoChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoChange.m; sourceTree = "<group>"; };
+		18E89D881D2EA7990058414A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		18F3F33F1D26411600857FF9 /* JCAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JCAlertView.bundle; sourceTree = "<group>"; };
 		18F3F3401D26411600857FF9 /* JCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCAlertView.h; sourceTree = "<group>"; };
 		18F3F3411D26411600857FF9 /* JCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCAlertView.m; sourceTree = "<group>"; };
@@ -283,12 +297,14 @@
 		188D98081D2344F300A90DD7 /* LetsTeasing */ = {
 			isa = PBXGroup;
 			children = (
+				18E89D811D2E527D0058414A /* Header */,
 				18841ACA1D2A221E00316FC8 /* image */,
 				188D983F1D23454B00A90DD7 /* frameWork */,
 				18F3F33D1D2640FE00857FF9 /* third */,
 				18B0C13E1D253AE800E7BE2C /* Operation */,
 				18B0C13B1D253AA800E7BE2C /* model */,
 				18B0C13A1D253A9900E7BE2C /* view */,
+				18B0C13D1D253AD300E7BE2C /* cell */,
 				188D980C1D2344F300A90DD7 /* AppDelegate.h */,
 				188D980D1D2344F300A90DD7 /* AppDelegate.m */,
 				188D980F1D2344F300A90DD7 /* ViewController.h */,
@@ -297,6 +313,7 @@
 				188D981A1D2344F300A90DD7 /* LaunchScreen.storyboard */,
 				188D981D1D2344F300A90DD7 /* Info.plist */,
 				188D98151D2344F300A90DD7 /* LetsTeasing.xcdatamodeld */,
+				18E89D711D2BA7F20058414A /* PrefixHeader.pch */,
 				188D98091D2344F300A90DD7 /* Supporting Files */,
 			);
 			path = LetsTeasing;
@@ -392,7 +409,6 @@
 		18B0C13A1D253A9900E7BE2C /* view */ = {
 			isa = PBXGroup;
 			children = (
-				18B0C13D1D253AD300E7BE2C /* cell */,
 				18B0C13C1D253AB400E7BE2C /* tableview */,
 			);
 			name = view;
@@ -401,6 +417,8 @@
 		18B0C13B1D253AA800E7BE2C /* model */ = {
 			isa = PBXGroup;
 			children = (
+				18E89D721D2C88D20058414A /* PersonalInfo.h */,
+				18E89D731D2C88D20058414A /* PersonalInfo.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -418,6 +436,10 @@
 				18B0C09F1D24E3D400E7BE2C /* YY_base_table.m */,
 				1849521E1D27492700E4DF3F /* YY_content_table.h */,
 				1849521F1D27492700E4DF3F /* YY_content_table.m */,
+				18E89D7B1D2CE5070058414A /* changeName.h */,
+				18E89D7C1D2CE5070058414A /* changeName.m */,
+				18E89D7E1D2E0DFC0058414A /* AlertTextBaseView.h */,
+				18E89D7F1D2E0DFC0058414A /* AlertTextBaseView.m */,
 			);
 			name = tableview;
 			sourceTree = "<group>";
@@ -438,6 +460,16 @@
 				188D98461D23462A00A90DD7 /* operation.m */,
 			);
 			name = Operation;
+			sourceTree = "<group>";
+		};
+		18E89D811D2E527D0058414A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				18E89D851D2EA7450058414A /* photoChange.h */,
+				18E89D861D2EA7450058414A /* photoChange.m */,
+				18E89D881D2EA7990058414A /* Header.h */,
+			);
+			name = Header;
 			sourceTree = "<group>";
 		};
 		18F3F33D1D2640FE00857FF9 /* third */ = {
@@ -757,14 +789,18 @@
 				188D98D31D2368E500A90DD7 /* MASViewConstraint.m in Sources */,
 				188D98471D23462A00A90DD7 /* operation.m in Sources */,
 				188D980E1D2344F300A90DD7 /* AppDelegate.m in Sources */,
+				18E89D871D2EA7450058414A /* photoChange.m in Sources */,
 				18841AC91D2907D800316FC8 /* YY_TextView.m in Sources */,
 				184952201D27492700E4DF3F /* YY_content_table.m in Sources */,
 				188D980B1D2344F300A90DD7 /* main.m in Sources */,
 				188D98D61D2368E500A90DD7 /* View+MASAdditions.m in Sources */,
 				188D98CE1D2368E500A90DD7 /* MASCompositeConstraint.m in Sources */,
+				18E89D741D2C88D20058414A /* PersonalInfo.m in Sources */,
+				18E89D7D1D2CE5070058414A /* changeName.m in Sources */,
 				188D98D21D2368E500A90DD7 /* MASViewAttribute.m in Sources */,
 				188D98D01D2368E500A90DD7 /* MASConstraintMaker.m in Sources */,
 				188D98E31D240EB900A90DD7 /* textCell.m in Sources */,
+				18E89D801D2E0DFC0058414A /* AlertTextBaseView.m in Sources */,
 				188D98D41D2368E500A90DD7 /* NSArray+MASAdditions.m in Sources */,
 				188D98D71D2368E500A90DD7 /* ViewController+MASAdditions.m in Sources */,
 				188D98CF1D2368E500A90DD7 /* MASConstraint.m in Sources */,
@@ -912,6 +948,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LetsTeasing/Bmob_SDK_iOS_v1.7.1副本",
 				);
+				GCC_PREFIX_HEADER = "/Users/apple/Documents/yy的代码/百度云同步盘/newProject/kx519-master/PrefixHeader.pch";
 				INFOPLIST_FILE = LetsTeasing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LetsTeasing;
@@ -931,6 +968,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LetsTeasing/Bmob_SDK_iOS_v1.7.1副本",
 				);
+				GCC_PREFIX_HEADER = "/Users/apple/Documents/yy的代码/百度云同步盘/newProject/kx519-master/PrefixHeader.pch";
 				INFOPLIST_FILE = LetsTeasing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LetsTeasing;

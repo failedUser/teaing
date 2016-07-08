@@ -12,28 +12,6 @@
 
 @implementation YY_TextView
 
-#pragma mark 生命周期方法
-//- (instancetype)init{
-//    self = [super init];
-//    if (self){
-//        //1.自我初始化
-//        //->设置默认字体\提示字体
-//        self.font=JQTextViewFont;
-//        self.translatesAutoresizingMaskIntoConstraints = NO;
-//        self.backgroundColor=[UIColor whiteColor];//默认背景色
-//        self.contentMode = UIViewContentModeCenter;
-//        self.layer.cornerRadius = 8;
-//        self.placeHoder = @"JQTextView";//默认提示语
-//
-//        //2.添加子控件
-//        [self addSubView];
-//
-//        //3.监听textView文字通知
-//        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
-//    }
-//
-//    return self;
-//}
 -(instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer
 {
     self = [super initWithFrame:frame textContainer:textContainer];
@@ -42,7 +20,7 @@
         self.backgroundColor=[UIColor whiteColor];//默认背景色
         self.contentMode = UIViewContentModeCenter;
         self.layer.cornerRadius = 6;//圆角
-//        self.contentInset = UIEdgeInsetsMake(0, 5, 0, 0);
+//        self.contentInset = UIEdgeInsetsMake(-3, 0, 0, 0);
         //2.添加子控件
         [self addSubView];
         [self addimage];
@@ -59,7 +37,6 @@
     //移除所有通知
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
-
 
 #pragma mark 控件相关
 
@@ -78,6 +55,12 @@
     _placehoderLbl.numberOfLines=0;
     
     [self addSubview:_placehoderLbl];
+    [self.placehoderLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leftMargin.equalTo(self.mas_left).offset(YY_ININPONE5_WITH(30.0f));
+        make.height.offset(YY_ININPONE5_HEIGHT(30.0f));
+        make.rightMargin.equalTo(self.mas_right).offset(YY_ININPONE5_WITH(-30.0f));
+        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(5.0f));
+    }];
 }
 -(void)addimage
 {
@@ -98,11 +81,13 @@
         _PlaceHoder_Image.hidden = (self.text.length>0);
         //自适应高度
         //        [self autoFitHeight];
-        //滚动到最后一行文字
+        self.scrollEnabled =YES;
+//        //滚动到最后一行文字
         [self scrollRangeToVisible:NSMakeRange(self.text.length, 1)];
     }else if(self.text.length == 0){
         _placehoderLbl.hidden=(self.text.length != 0);
     _PlaceHoder_Image.hidden = (self.text.length!= 0);
+        self.scrollEnabled =NO;
     }
 }
 

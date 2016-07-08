@@ -32,7 +32,6 @@
         _namelabel.text = @"yy";
 
         _TextLabel = [[UILabel alloc]init];
-//        _TextLabel.backgroundColor = [UIColor grayColor];
         //需要顶端对其？？
     
         

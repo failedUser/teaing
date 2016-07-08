@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface Personal_centerViewController : UIViewController
-
+@property(nonatomic,strong) UILabel* self_Name_lbl;
 @end

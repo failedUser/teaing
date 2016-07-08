@@ -9,6 +9,9 @@
 #import "View_for_Text.h"
 
 @interface View_for_Text()
+{
+    UILabel *  line;
+}
 
 @end
 @implementation View_for_Text
@@ -20,41 +23,43 @@
         [self addViewForText];
         [self addSendBUtton];
         //4.监听键盘的弹起和收缩
-       [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    }
+        [self autolayoutWithMasonry];
+          }
     
-    
- 
+  
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+
     return self;
 }
-- (void)dealloc{
-    //移除所有通知
-    [[NSNotificationCenter defaultCenter]removeObserver:self];
-}
+
 -(void)addViewForText
 {
     
-//    UIView * baseVIew = [[UIView alloc]initWithFrame:CGRectMake(0, HeightForTable, 320, 30)];
-//    [self addSubview:baseVIew];
-    
-    UILabel *  line = [[UILabel alloc]initWithFrame:CGRectMake(10, 30, 300, 1)];
+    line = [[UILabel alloc]initWithFrame:CGRectMake(10, 30, 300, 1)];
     line.backgroundColor = [UIColor blackColor];
     [self addSubview:line];
+    
     self.yy_text  = [[YY_TextView alloc]initWithFrame:CGRectMake(5, 5, 280, 22)];
     self.yy_text.constrainH = self.constrainH;
-//    self.yy_text.popView = self.view;
-    //    [self.view addSubview:_yy_text];
     [self addSubview:self.yy_text];
+    
+    
+ 
+  
 }
 -(void)addSendBUtton
 {
     _send_btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_send_btn setFrame:CGRectMake(285, 0, 30, 30)];
-    UIImage* image =[UIImage imageNamed:@"send.png"] ;
+    UIImage* image =[UIImage imageNamed:@"send.png"];
     [_send_btn setImage: [self OriginImage:image scaleToSize:CGSizeMake(15, 15)] forState:UIControlStateNormal];
+    _send_btn.imageEdgeInsets = UIEdgeInsetsMake(13, 0, 0, 0);
     
     [self addSubview:_send_btn];
+    
+  
 }
+//自定义修改尺寸
 -(UIImage*) OriginImage:(UIImage *)image scaleToSize:(CGSize)size
 {
     UIGraphicsBeginImageContext(size); //size 为CGSize类型，即你所需要的图片尺寸
@@ -67,7 +72,7 @@
     
     return scaledImage; //返回的就是已经改变的图片
 }
-
+//键盘监听事件
 - (void)keyBoardChange:(NSNotification *)note{
     // 0.取出键盘动画的时间
     CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
@@ -82,6 +87,43 @@
     [UIView animateWithDuration:duration animations:^{
         self.popView.transform = CGAffineTransformMakeTranslation(0, transformY);
     }];
+
+}
+-(void)autolayoutWithMasonry
+{
+    
+    [_send_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        //        make.leftMargin.equalTo(self.mas_left).offset(5);
+        make.height.offset(YY_ININPONE5_HEIGHT(30.0f));
+        make.width.offset(YY_ININPONE5_WITH(30.0f));
+        make.rightMargin.equalTo(self.mas_right).offset(YY_ININPONE5_WITH(-10.0f));
+        make.topMargin.equalTo(self.mas_top).offset(0);
+    }];
+    
+    
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leftMargin.equalTo(self.mas_left).offset(YY_ININPONE5_WITH(10.0f));
+        make.height.offset(1);
+        make.rightMargin.equalTo(self.mas_right).offset(YY_ININPONE5_WITH(-10.0f));
+        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(30.0f));
+    }];
+    
+    
+    [self.yy_text mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leftMargin.equalTo(self.mas_left).offset(YY_ININPONE5_WITH(5.0f));
+        make.height.offset(YY_ININPONE5_HEIGHT(22.0f));
+        make.rightMargin.equalTo(self.mas_right).offset(YY_ININPONE5_WITH(-35.0f));
+        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(8.0f));
+    }];
+}
+//添加监听
+-(void)addObserver
+{
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+- (void)dealloc1{
+    //移除所有通知
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 @end

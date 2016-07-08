@@ -6,8 +6,9 @@
 // About you
 // Add "Accelerate.frameWork" first in your project otherwise error!
 
-#import <UIKit/UIKit.h>
-#import "View_for_Text.h"
+#import  <UIKit/UIKit.h>
+#import "AlertTextBaseView.h"
+#import "YY_content_table.h"
 
 // maybe useful
 UIKIT_EXTERN NSString *const JCAlertViewWillShowNotification;
@@ -22,9 +23,11 @@ typedef NS_ENUM(NSInteger, JCAlertViewButtonType) {
     JCAlertViewButtonTypeWarn
 };
 
-@interface JCAlertView : UIView
-@property(nonatomic,strong) View_for_Text * basetextView;
-
+@interface JCAlertView : UIView<UITextViewDelegate>
+@property(nonatomic,strong) AlertTextBaseView * basetextView;
+@property(nonatomic,strong) NSMutableArray *ScellContent;
+@property (nonatomic,strong) YY_content_table * table;
+@property(nonatomic,assign) NSInteger multiple;
 
 
 // ------------------------Show AlertView with title and message----------------------

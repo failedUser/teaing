@@ -10,6 +10,7 @@
 
 @interface YY_content_table :UITableView<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,assign) NSInteger countOF;
-@property(nonatomic,assign) NSArray * cellContent;
--(void)setArray:(NSArray*)Array;
+@property(nonatomic,assign) NSMutableArray * cellContent;
+@property(nonatomic,assign) CGFloat    heightTable;
+
 @end

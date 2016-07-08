@@ -15,6 +15,6 @@
 @property   (nonatomic,strong)  UIView             * popView;
 @property   (nonatomic,strong)  YY_TextView        * yy_text;
 @property   (nonatomic,strong)  UIButton           * send_btn;
-
-//-(void)NOtification:(BOOL)BOOls;
+- (void)dealloc1;
+-(void)addObserver;
 @end

@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PersonalInfo.h"
 
 @interface operation : NSObject
 @property(nonatomic,strong) NSString* className;
+
+
 -(void)baocunshuju:(NSString *)Name userage:(id) age;
 -(void)getData:(NSString *)bgId conString:(NSString *) contring;
 -(void)changeBackGroundid:(NSString *)bgid changeValueName:(NSString *) changeName value:(NSObject *)value;

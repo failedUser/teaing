@@ -15,9 +15,9 @@
 @property(nonatomic,assign) NSArray * cellContent;
 @property(nonatomic,assign) NSMutableArray * arrayForCell;
 @property(nonatomic,assign) CGFloat    heightTable;
+//@property(nonatomic,strong) NSMutableDictionary * SaidWord;
 
 
--(void)didseleted;
 
 
 

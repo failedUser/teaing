@@ -9,26 +9,27 @@
 #import "JCAlertView.h"
 #import <Accelerate/Accelerate.h>
 #import "YY_content_table.h"
-#import "View_for_Text.h"
+#import "AlertTextBaseView.h"
 
 NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotification";
 
 #define JCColor(r, g, b) [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0]
 #define JCScreenWidth [UIScreen mainScreen].bounds.size.width
 #define JCScreenHeight [UIScreen mainScreen].bounds.size.height
-#define JCAlertViewWidth 280
-#define JCAlertViewHeight 400
-#define JCAlertViewMaxHeight 440
+#define JCAlertViewWidth YY_ININPONE5_WITH(280.0f)
+#define JCAlertViewHeight YY_ININPONE5_HEIGHT(400.0f)
+#define JCAlertViewMaxHeight YY_ININPONE5_HEIGHT(440.0f)
 #define JCMargin 8
-#define JCButtonHeight 44
-#define JCAlertViewTitleLabelHeight 50
-#define JCAlertViewTitleColor JCColor(65, 65, 65)
-#define JCAlertViewTitleFont [UIFont boldSystemFontOfSize:20]
+//#define JCButtonHeight 44
+#define JCAlertViewTitleLabelHeight YY_ININPONE5_HEIGHT(20.0f)
+#define JCAlertViewTitleColor [UIColor lightGrayColor]
+#define JCAlertViewTitleFont [UIFont boldSystemFontOfSize:13]
 #define JCAlertViewContentColor JCColor(102, 102, 102)
 #define JCAlertViewContentFont [UIFont systemFontOfSize:16]
 #define JCAlertViewContentHeight (JCAlertViewHeight - JCAlertViewTitleLabelHeight - JCButtonHeight - JCMargin * 2)
 #define JCiOS7OrLater ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
-#define tableViewHeight 290
+#define tableViewHeight YY_ININPONE5_HEIGHT(290.0f)
+#define TextVIewHeight YY_ININPONE5_HEIGHT(30.0f)
 @class JCViewController;
 
 @protocol JCViewControllerDelegate <NSObject>
@@ -42,7 +43,7 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSArray *array;
-@property (nonatomic,strong) YY_content_table * table;
+
 @property (nonatomic, strong) NSArray *buttons;
 @property (nonatomic, strong) NSArray *clicks;
 @property (nonatomic, copy) clickHandleWithIndex clickWithIndex;
@@ -115,14 +116,17 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
 //    [self addScreenShot];
     [self addCoverView];
     [self addAlertView];
+//    
+            [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardChange2:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(KeyBoardEndChange:) name:UIKeyboardWillHideNotification object:nil];
     
 }
 - (void)addCoverView{
 
     self.coverView = [[UIButton alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //backgroundWindow上面覆盖的view
-//    self.coverView.backgroundColor = JCColor(5, 0, 10);
-    self.coverView.backgroundColor = [UIColor greenColor];
+    self.coverView.backgroundColor = JCColor(5, 0, 10);
+//    self.coverView.backgroundColor = [UIColor greenColor];
     [self.coverView addTarget:self action:@selector(coverViewClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.coverView];
 }
@@ -135,7 +139,7 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
 }
 
 - (void)addAlertView{
-
+    self.alertView.multiple =1;
     [self.alertView setup];
     [self.view addSubview:self.alertView];
 }
@@ -212,10 +216,55 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
         self.alertView.transform = CGAffineTransformMakeScale(1, 1);
     }];
 }
+- (void)keyBoardChange2:(NSNotification *)note{
+    // 0.取出键盘动画的时间
+    _alertView.multiple = 0.5;
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 
+    // 1.取得键盘最后的frame
+    CGRect keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+
+    // 2.计算控制器的view需要平移的距离
+    CGFloat transformY = keyboardFrame.origin.y - self.view.frame.size.height+YY_ININPONE5_HEIGHT(84.0);
+    //修改alert的高度
+ // 3.执行动画
+    [UIView animateWithDuration:duration animations:^{
+        self.alertView.transform = CGAffineTransformMakeTranslation(0, transformY);
+    }];
+//    [UIView animateWithDuration:duration animations:^{
+//        self.view.transform = CGAffineTransformMakeTranslation(0, transformY);
+//    }];
+}
+-(void)KeyBoardEndChange:(NSNotification *)note
+{
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    // 1.取得键盘最后的frame
+    CGRect keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    // 2.计算控制器的view需要平移的距离
+    CGFloat transformY = keyboardFrame.origin.y - self.view.frame.size.height;
+    //修改alert的高度
+    //     self.frame = CGRectMake(0, 0, JCAlertViewWidth, JCAlertViewHeight-84);
+    // 3.执行动画
+    [UIView animateWithDuration:duration animations:^{
+        self.alertView.transform = CGAffineTransformMakeTranslation(0, transformY);
+    }];
+}
 @end
 
 @implementation JCAlertView
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _ScellContent = [NSMutableArray arrayWithObjects:@"你你你你你你你你你你",@"1",@"妮妮", @"你你你你你你你你你你",@"1",@"妮妮"@"你你你你你你你你你你",@"1",@"妮妮"@"你你你你你你你你你你",@"1",@"妮妮",@"你你你你你你你你你你",@"1",@"妮妮", @"你你你你你你你你你你",@"1",@"妮妮"@"你基地将诶菲菲和ufhweui你你你你你你你你你你你你你你你你你你你你你你你",@"1",@"妮妮"@"你你你你你你你你你你",nil];
+//        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardChange2:) name:UIKeyboardWillChangeFrameNotification object:nil];
+
+
+    }
+    return self;
+}
 //button不在需要
 - (NSArray *)buttons{
 
@@ -306,8 +355,8 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
     if (self.isCustomAlert) {
         return;
     }
-    
-    self.frame = CGRectMake(0, 0, JCAlertViewWidth, JCAlertViewHeight);
+
+    self.frame = CGRectMake(0, 0, _multiple*JCAlertViewWidth, _multiple*JCAlertViewHeight);
 //    NSInteger count = self.buttons.count;
     self.center = CGPointMake(JCScreenWidth / 2, JCScreenHeight / 2);
     
@@ -316,33 +365,52 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
 
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(JCMargin, 0, JCAlertViewWidth - JCMargin * 2, JCAlertViewTitleLabelHeight)];
-    
     titleLabel.backgroundColor = [UIColor clearColor];
-
-    
-    
     titleLabel.text = self.title;
     titleLabel.textColor = JCAlertViewTitleColor;
     titleLabel.font = JCAlertViewTitleFont;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:titleLabel];
-    self.table = [[YY_content_table alloc]initWithFrame:CGRectMake(JCMargin, JCAlertViewTitleLabelHeight, JCAlertViewWidth - JCMargin * 2, tableViewHeight)];
+
+    self.table = [[YY_content_table alloc]initWithFrame:CGRectMake(JCMargin, JCAlertViewTitleLabelHeight, JCAlertViewWidth - JCMargin * 2, self.frame.size.height-JCAlertViewTitleLabelHeight-TextVIewHeight)];
     //给table的array赋值
-    [_table setArray:_array];
+    self.table.cellContent = _ScellContent;
     [self addSubview:_table];
-    
     if (!JCiOS7OrLater) {
         CGRect frame = self.frame;
         frame.origin.y -= 10;
         self.frame = frame;
     }
-
-        UIButton * view =  [[UIButton alloc]initWithFrame:CGRectMake(JCMargin, self.frame.size.height - JCButtonHeight - JCMargin, JCAlertViewWidth - JCMargin * 2, JCButtonHeight)];
-        view.backgroundColor = [UIColor redColor];
+    _basetextView = [[AlertTextBaseView alloc]initWithFrame:CGRectMake(JCMargin, self.frame.size.height - TextVIewHeight, JCAlertViewWidth - JCMargin * 2, TextVIewHeight)];
+    _basetextView.yy_text.placehoderLbl.text = (_basetextView.yy_text.placeHoder.length>0?_basetextView.yy_text.placeHoder:@"@评论");
+          [_basetextView.send_btn addTarget:self action:@selector(SendToAlertTable) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_basetextView];
+    
+    
+        UIButton * view =  [[UIButton alloc]initWithFrame:CGRectMake(YY_ININPONE5_WITH(290.0f)- YY_ININPONE5_WITH(30.0), 0 , YY_ININPONE5_HEIGHT(20.0), YY_ININPONE5_HEIGHT(20.0))];
+//        view.backgroundColor = [UIColor redColor];
+//    _basetextView.popView =self;
+    [view setImage:[UIImage imageNamed:@"delete.png"] forState:UIControlStateNormal];
     [view addTarget:self action:@selector(alertBtnClick) forControlEvents:UIControlEventTouchUpInside];
 //        view.popView = self;
         [self addSubview:view];
 
+
+}
+-(void)SendToAlertTable
+{
+    NSLog(@"点击啦");
+    
+    NSString * message = [self.basetextView.yy_text.text  copy];
+        [_ScellContent addObject:message];
+    NSLog(@"%@",message);
+//    //    self.index =ScellContent.count;
+    [self.basetextView.yy_text resignFirstResponder];
+    [self.table reloadData];
+//    //滑到更新的那一行
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_ScellContent.count-1 inSection:0];
+    [self.table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    self.basetextView.yy_text.text = @"";
 }
 
 

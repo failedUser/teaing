@@ -7,8 +7,10 @@
 //
 
 #import "Personal_centerViewController.h"
-#define heigdtforSection 10
-#define HeightforCell 35
+#import "changeName.h"
+#import "MJRefresh.h"
+#define heigdtforSection (10.0f/568.0f)*SCREEN_HEIGHT
+#define HeightforCell 35.0f
 
 @interface Personal_centerViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -16,27 +18,55 @@
     NSArray * List_name2;
     NSArray * List_name3;
     NSArray * Array_section;
-    
+    UITableView  * person_tabV;
     UISwitch * Switch;
+  
 }
 
 @end
 
 @implementation Personal_centerViewController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+        [super viewWillAppear: animated];
+    // 马上进入刷新状态
+ 
+    [person_tabV.mj_header beginRefreshing];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
+   // 或
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+
+    
+  
+    
     self.navigationItem.title = @"我";
     List_name1 = [NSArray arrayWithObjects:@"昵称", nil];
     List_name2 = [NSArray arrayWithObjects:@"消息推送",@"个性化", nil];
     List_name3 = [NSArray arrayWithObjects:@"给个好评",@"帮助",@"关于", nil];
     Array_section = [NSArray arrayWithObjects:List_name1,List_name2,List_name3, nil];
-    UITableView  * person_tabV = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 568) style:UITableViewStyleGrouped];
+    person_tabV = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+    //下拉刷新
+       MJRefreshHeader * header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
+    header.automaticallyChangeAlpha =YES;
+
+    person_tabV.mj_header = header;
+   
     person_tabV.delegate = self;
     person_tabV.dataSource = self;
-    person_tabV.scrollEnabled =NO; //设置tableview 不能滚动
+//    person_tabV.scrollEnabled =NO; //设置tableview 不能滚动
     [self.view  addSubview:person_tabV];
     [self addLogOutButton:person_tabV];
+}
+//下来刷新
+-(void)refresh
+{
+    [self getDAta];
+    sleep(0.5);
+    [person_tabV.mj_header endRefreshing];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -78,14 +108,38 @@
     
     if(indexPath.section == 1)
     {
+        
         [self addbutton:cell button:Switch];
     }else if(indexPath.section == 0||indexPath.section == 2)
     {
+        if (indexPath.section == 0) {
+            [self addNameLabel:cell];
+            
+        }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.tintColor = [UIColor redColor];
         
     }
     return cell;
+}
+-(void)addNameLabel:(UITableViewCell *)cell
+{
+    _self_Name_lbl = [[UILabel alloc]initWithFrame:CGRectMake(100, 0, 180, HeightforCell)];
+    [self getDAta];
+    _self_Name_lbl.textAlignment = NSTextAlignmentRight;
+    _self_Name_lbl.backgroundColor= [UIColor whiteColor];
+    _self_Name_lbl.tintColor = [UIColor grayColor];
+    _self_Name_lbl.font = [UIFont fontWithName:@"Arial" size:13];
+    [cell.contentView addSubview:_self_Name_lbl];
+    
+    [_self_Name_lbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.offset(YY_ININPONE5_HEIGHT(35.0f));
+
+        make.rightMargin.equalTo(cell.contentView.mas_right).offset(YY_ININPONE5_WITH(-30.0f));
+        make.width.offset(YY_ININPONE5_WITH(180.0f));
+        
+        
+    }];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -111,13 +165,24 @@
 //添加switch
 -(void)addbutton:(UITableViewCell *) cell1 button:(UISwitch *)Switch1
 {
-    Switch1 = [[UISwitch alloc]initWithFrame:CGRectMake(275, 3, 10, 15)];
+    Switch1 = [[UISwitch alloc]initWithFrame:CGRectMake(275,10, 10, 15)];
     [Switch1 setOn:YES animated:YES];
+
     [Switch1 setOnTintColor:[UIColor blackColor]];
     Switch1.transform = CGAffineTransformMakeScale(0.6, 0.6);
     [cell1.contentView addSubview:Switch1];
     
+    [Switch1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.offset(YY_ININPONE5_HEIGHT(15.0f));
+        make.leftMargin.equalTo(cell1.contentView.mas_left).offset(YY_ININPONE5_WITH(282.0f));
+        make.topMargin.equalTo(cell1.contentView.mas_top).offset(YY_ININPONE5_HEIGHT(15.0f));
+        make.width.offset(YY_ININPONE5_WITH(10.0f));
+        
+        
+    }];
+    
 }
+//需要写事件
 -(void)addLogOutButton:(UITableView * ) tableview
 {
     UIButton* logOut = [[UIButton alloc]initWithFrame:CGRectMake(0, 320, 320, 44)];
@@ -130,26 +195,79 @@
 
 
     [tableview addSubview:logOut];
+    [logOut mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.offset(YY_ININPONE5_HEIGHT(44.0f));
+        make.topMargin.equalTo(tableview.mas_top).offset(YY_ININPONE5_HEIGHT(320.0f));
+        make.width.offset(YY_ININPONE5_WITH(320.0f));
+
+    }];
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return HeightforCell;
+    return YY_ININPONE5_HEIGHT(HeightforCell);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//查询获得数据
+-(void)getData:(NSString *)bgId conString:(NSString *) contring
+{
+    //查找GameScore表
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"GameScore"];
+    //查找GameScore表里面id为0c6db13c的数据
+    bgId = @"UVTaKKKP";
+    [bquery getObjectInBackgroundWithId:bgId block:^(BmobObject *object,NSError *error){
+        if (error){
+            //进行错误处理
+        }else{
+            //表里有id为0c6db13c的数据
+            if (object) {
+                //得到playerName和cheatMode
+                
+                NSString* string = [object objectForKey:@"playerName"];
+                
+                NSLog(@"%@",string);
+                [self getString:string];
+            }
+        }
+    }];
+    
+    
 }
-*/
+-(void)getDAta
+{
+        [self getData:@"69B2444J" conString:@"playerName"];
+}
+-(void)getString:(NSString*) string
+{
+    _self_Name_lbl.text= string;
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section ==0) {
+     
+        changeName * view = [[changeName alloc]init];
+          UIBarButtonItem *backbutton = [[UIBarButtonItem alloc]init];
+        backbutton.title = @"";
+        [backbutton setTintColor:[UIColor whiteColor]];
+        self.navigationItem.backBarButtonItem = backbutton;
+        [self.navigationController pushViewController:view animated:YES];
+    }
+       [person_tabV deselectRowAtIndexPath:indexPath animated:NO];
+
+}
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 1 )
+    {
+        return NO;
+    }
+    return YES;
+}
+
 
 @end
