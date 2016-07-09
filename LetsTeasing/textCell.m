@@ -16,24 +16,25 @@
    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self)
     {
+      
         NSDate *currentDate = [NSDate date];//获取当前时间，日期
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"hh:mm:ss SS"];
         
-        
         _dataLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 3, 100, 15)];
+        _namelabel = [[UILabel alloc]initWithFrame:CGRectMake(110, 3, 50, 15)];
+        _TextLabel = [[UILabel alloc]init];
+        
+        
         NSString *dateString = [dateFormatter stringFromDate:currentDate];
         _dataLabel.text =dateString;
 
-        
-        
-        _namelabel = [[UILabel alloc]initWithFrame:CGRectMake(110, 3, 50, 15)];
-  
-        _namelabel.text = @"yy";
 
-        _TextLabel = [[UILabel alloc]init];
         //需要顶端对其？？
-    
+        
+        
+        _namelabel.textColor = [UIColor redColor];
+        _dataLabel.textColor =[UIColor lightGrayColor];
         
 //        _TextLabel.textAlignment =NSTextAlignmentJustified;
 //        [_TextLabel setContentMode:UIViewContentModeTop];
@@ -49,11 +50,29 @@
         [self.contentView addSubview:_dataLabel];
         [self.contentView addSubview:_TextLabel];
         [self.contentView addSubview:_namelabel];
+        
+          [self autolayout];
     }
     return self;
 }
 
-
+-(void)autolayout
+{
+    [_dataLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leftMargin.equalTo(self.contentView.mas_leftMargin).offset(YY_ININPONE5_WITH(5.0f));
+        make.height.offset(YY_ININPONE5_HEIGHT(15.0f));
+        make.width.offset(YY_ININPONE5_WITH(80.0f));
+        make.topMargin.equalTo(self.contentView.mas_top).offset(YY_ININPONE5_HEIGHT(8.0f));
+    }];
+    
+    
+    [_namelabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leftMargin.equalTo(_dataLabel.mas_right).offset(YY_ININPONE5_WITH(8.0f));
+        make.height.offset(YY_ININPONE5_HEIGHT(15.0f));
+        make.width.offset(YY_ININPONE5_WITH(150.0f));
+        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(8.0f));
+    }];
+}
 
 
 

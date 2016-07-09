@@ -16,6 +16,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
 {
+    [self data];
     self = [super initWithFrame:frame style:UITableViewStyleGrouped];
     self.delegate =self;
     self.dataSource = self;
@@ -33,7 +34,8 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _cellContent.count;
+    return _comDict.count;
+//    return _cellContent.count;
 }
 
 
@@ -52,7 +54,11 @@
         cell.TextLabel.text = @"";
     }
     //创建完字体格式之后就告诉cell
-    cell.TextLabel.text = _cellContent[indexPath.row];
+    NSString *str = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+   _dicto = [_comDict objectForKey:str];
+    cell.TextLabel.text = [_dicto objectForKey:@"saidWord"];
+    cell.namelabel.text = [_dicto objectForKey:@"playerName"];
+//    cell.TextLabel.text = _cellContent[indexPath.row];
     
 //    cell.TextLabel.numberOfLines = ceilf(cell.TextLabel.text.length/19)+1;
     cell.TextLabel.numberOfLines =0;
@@ -68,8 +74,12 @@
     UIFont * font = [UIFont fontWithName:@"Arial" size:13.0];
     UILabel * label = [[UILabel alloc]init];
     [label setFont:font];
-    label.text =_cellContent[indexPath.row];
-    label.numberOfLines = ceilf(label.text.length/19)+1;
+    NSString * str = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    NSMutableDictionary * dict1 = [_comDict objectForKey:str];
+    label.text = [dict1 objectForKey:@"saidWord"];
+//    label.text =_cellContent[indexPath.row];
+//    label.numberOfLines = ceilf(label.text.length/19)+1;
+    label.numberOfLines =0;
     //cell里面字显示不出来是因为cell的高度不够，等以后整体功能做好了再仔细修改
     CGFloat  height = [self heightForString:label andWidth:YY_ININPONE5_WITH(240.0f)];
     _heightTable = height+28;
@@ -95,7 +105,12 @@
     return height;
     
 }
-
+-(void)data
+{
+    _comminfo = [[commentInfo alloc]init];
+    _comDict = [_comminfo neirong];
+    
+}
 
 
 @end

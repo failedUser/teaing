@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "commentInfo.h"
 
 @interface YY_content_table :UITableView<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,assign) NSMutableDictionary  * dicto;
+@property(nonatomic,strong) commentInfo * comminfo;
+@property(nonatomic,assign) NSMutableDictionary *comDict;
 @property(nonatomic,assign) NSInteger countOF;
 @property(nonatomic,assign) NSMutableArray * cellContent;
 @property(nonatomic,assign) CGFloat    heightTable;

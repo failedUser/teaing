@@ -275,15 +275,15 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
 }
 
 //table版
-+(void)showOneButtonWithTitle:(NSString *)title array:(NSArray *)Array {
++(void)showOneButtonWithTitle:(NSString *)title  {
     
     JCAlertView *alertView = [JCAlertView new];
-    [alertView configAlertViewPropertyWithTitle:title array:Array];
+    [alertView configAlertViewPropertyWithTitle:title];
 }
 //table版
-- (void)configAlertViewPropertyWithTitle:(NSString *)title array:(NSArray *)array {
+- (void)configAlertViewPropertyWithTitle:(NSString *)title  {
     self.title = title;
-    self.array= array;
+
     [[jCSingleTon shareSingleTon].alertStack addObject:self];
     [self showAlert];
 }
@@ -372,10 +372,6 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:titleLabel];
 
-    self.table = [[YY_content_table alloc]initWithFrame:CGRectMake(JCMargin, JCAlertViewTitleLabelHeight, JCAlertViewWidth - JCMargin * 2, self.frame.size.height-JCAlertViewTitleLabelHeight-TextVIewHeight)];
-    //给table的array赋值
-    self.table.cellContent = _ScellContent;
-    [self addSubview:_table];
     if (!JCiOS7OrLater) {
         CGRect frame = self.frame;
         frame.origin.y -= 10;
@@ -385,7 +381,7 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
     _basetextView.yy_text.placehoderLbl.text = (_basetextView.yy_text.placeHoder.length>0?_basetextView.yy_text.placeHoder:@"@评论");
           [_basetextView.send_btn addTarget:self action:@selector(SendToAlertTable) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_basetextView];
-    
+    [self addTable];
     
         UIButton * view =  [[UIButton alloc]initWithFrame:CGRectMake(YY_ININPONE5_WITH(290.0f)- YY_ININPONE5_WITH(30.0), 0 , YY_ININPONE5_HEIGHT(20.0), YY_ININPONE5_HEIGHT(20.0))];
 //        view.backgroundColor = [UIColor redColor];
@@ -397,18 +393,33 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
 
 
 }
+-(void)addTable
+{
+//    _UItable = [[UITableView alloc]initWithFrame:CGRectMake(JCMargin, JCAlertViewTitleLabelHeight, JCAlertViewWidth - JCMargin * 2, self.frame.size.height-JCAlertViewTitleLabelHeight-TextVIewHeight)];
+//    self.table = [[YY_content_table alloc]initWithFrame:CGRectMake(JCMargin, JCAlertViewTitleLabelHeight, JCAlertViewWidth - JCMargin * 2, self.frame.size.height-JCAlertViewTitleLabelHeight-TextVIewHeight)];
+    self.table = [[YY_content_table alloc]init];
+    //给table的array赋值
+    _UItable = self.table;
+
+    [_UItable setFrame:CGRectMake(JCMargin, JCAlertViewTitleLabelHeight, JCAlertViewWidth - JCMargin * 2, self.frame.size.height-JCAlertViewTitleLabelHeight-TextVIewHeight)];
+//    self.table.cellContent = _ScellContent;
+    [self addSubview:_UItable];
+}
 -(void)SendToAlertTable
 {
     NSLog(@"点击啦");
     
     NSString * message = [self.basetextView.yy_text.text  copy];
-        [_ScellContent addObject:message];
-    NSLog(@"%@",message);
+    NSString * num  = [NSString stringWithFormat:@"%ld",(_table.comminfo.Comment_DICT.count)];
+    NSMutableDictionary * Dict_Message = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"这是我自己的号",@"playerName",message,@"saidWord",num,@"numberOf",@"dwudhwufgw",@"objectId", nil];
+    [_table.comminfo DICTaddDIct:Dict_Message key:num];
+//        [_ScellContent addObject:message];
+//    NSLog(@"%@",message);
 //    //    self.index =ScellContent.count;
     [self.basetextView.yy_text resignFirstResponder];
     [self.table reloadData];
 //    //滑到更新的那一行
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_ScellContent.count-1 inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_table.comDict.count-1 inSection:0];
     [self.table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     self.basetextView.yy_text.text = @"";
 }

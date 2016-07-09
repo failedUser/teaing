@@ -399,8 +399,8 @@
  */
 -(void)getObjectInBackgroundWithId:(NSString *)objectId
                              block:(BmobObjectResultBlock)block;
--(void)getObjectInBackgroundWithNum:(NSNumber *)objectNum
-                             block:(BmobObjectResultBlock)block;
+//-(void)getObjectInBackgroundWithNum:(NSNumber *)objectNum
+//                             block:(BmobObjectResultBlock)block;
 /**
  *	查找BmobObject对象数组，该方法可查询多条数据
  *

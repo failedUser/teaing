@@ -10,12 +10,14 @@
 
 @implementation PersonalInfo
 
--(void)initwithInfo:(PersonalInfo*)info
++(instancetype)initwithInfo:(NSMutableDictionary *) dict
 {
-    info.saidWord =self.saidWord;
-    info.userName =  self.userName;
-    info.passWord = self.passWord;
-    info.Name = self.Name;
+    PersonalInfo * info = [[PersonalInfo alloc]init];
+    info.saidWord =[dict objectForKey:@"saidWord"];
+    info.Num = [dict objectForKey:@"numberOfSaidWords"];
+    info.Name = [dict objectForKey:@"playerName"];
+    info.ID = [dict objectForKey:@"objectId"];
+    return info;
 }
 
 

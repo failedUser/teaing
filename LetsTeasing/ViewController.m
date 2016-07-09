@@ -14,6 +14,10 @@
 #import "YY_TextView.h"
 #import "View_for_Text.h"
 #import "JCAlertView.h"
+#import "dict.h"
+#import "newMessage.h"
+#import "commentsTable.h"
+#import "YY_content_table.h"
 
 //动画时间
 #define kAnimationDuration 0.1
@@ -24,7 +28,7 @@
 #define addHeight 10
 
 #define  HeightForTable SCREEN_HEIGHT*(538.0/568.0)
-#define TextBackGroundVIewHeight SCREEN_HEIGHT*(30.0/568.0)
+#define TextBackGroundVIewHeight SCREEN_HEIGHT*(40.0/568.0)
 #define TextBackGroundVIewY SCREEN_HEIGHT*(538.0/568.0)
 @interface ViewController ()<UITextViewDelegate,UITableViewDelegate,UITextViewDelegate,UITextViewDelegate>
 {
@@ -41,6 +45,7 @@
 @property (weak, nonatomic) NSLayoutConstraint  * constrainH;
 @property(nonatomic,strong) View_for_Text       * baseVIew;
 @property(nonatomic,strong) JCAlertView         * Alertview;
+@property(nonatomic,strong) newMessage          * msg_view;
 @end
 
 @implementation ViewController
@@ -57,14 +62,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- ScellContent = [NSMutableArray arrayWithObjects:@"你你你你你你你你你你",@"1",@"妮妮", @"你你你你你你你你你你",@"1",@"妮妮"@"你你你你你你你你你你",@"1",@"妮妮"@"你你你你你你你你你你",@"1",@"妮妮",@"你你你你你你你你你你",@"1",@"妮妮", @"你你你你你你你你你你",@"1",@"妮妮"@"你你你你你你你你你你",@"1",@"妮妮"@"你你你你你你你你你你",nil];
- 
+    [self reloadInputViews];
     [self configNavigation];
     //实例化YY—table
     [self addTableview];
     [self addViewForText];
-    //        [_baseVIew NOtification:YES];
-    [self AutolayOutWithMasonry];
+    [self addMessageVIew];
     //添加手势
     UITapGestureRecognizer * Gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchesBegan)];
     [_yy_table addGestureRecognizer:Gesture];
@@ -101,7 +104,7 @@
 -(void)addTableview
 {
     _yy_table = [[YY_base_table alloc]init];
-    _yy_table.cellContent = ScellContent;
+//    _yy_table.cellContent = ScellContent;
     //整理逻辑的关键牌，我想写个监听
     _yy_table.backgroundColor = [UIColor grayColor];
     NSInteger  heighett = 0 ;
@@ -133,6 +136,9 @@
 //左边按钮的操作
 -(void)selfCenter
 {
+    if ([_baseVIew.yy_text isFirstResponder]) {
+        [_baseVIew.yy_text resignFirstResponder];
+    }
     Personal_centerViewController * perV= [[Personal_centerViewController alloc]init];
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc]init];
     backbutton.title = @"";
@@ -160,23 +166,33 @@
 
    NSString * message = [_baseVIew.yy_text.text copy];
     if (message.length == 0) {
-        [_baseVIew.yy_text isFirstResponder];
+        if ([_baseVIew.yy_text isFirstResponder]) {
+            [_baseVIew.yy_text resignFirstResponder];
+        }else
+        [_baseVIew.yy_text becomeFirstResponder];
     }else
     {
     [self MessageManager:message];
     [_baseVIew.yy_text resignFirstResponder];
     [self.yy_table reloadData];
     //滑到更新的那一行
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:ScellContent.count-1 inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_yy_table.dict.count-1 inSection:0];
     [self.yy_table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
      _baseVIew.yy_text.text = @"";
+        //传一个数据回去。作为值的变化
+        [_msg_view  HIDDEN:NO num:[_yy_table.data numberOfUnReadNews:_yy_table.data.DICT]];
      }
 
 }
 -(void)MessageManager:(NSString*) message
 {
     if (message!= 0) {
-        [ScellContent addObject:message];
+//        dict * dict1 = [[dict alloc]init];
+        NSString * num  = [NSString stringWithFormat:@"%ld",(_yy_table.data.DICT.count)];
+        NSMutableDictionary * Dict_Message = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"这是我自己的号",@"playerName",message,@"saidWord",num,@"numberOf",@"dwudhwufgw",@"objectId",@"NO",@"states",nil];
+        [_yy_table.data DICTaddDIct:Dict_Message key:num];
+   
+
     }
     
 }
@@ -236,7 +252,10 @@
         if(indexPath == nil) NSLog(@"nimeia");
         else{
             [_baseVIew.yy_text resignFirstResponder];
-            [self showAlertWithOneButton];
+//            JCAlertView * view = [[JCAlertView alloc]init];
+//            YY_content_table * ConTable = [[YY_content_table alloc]init];
+//            [view addTable:ConTable];
+            [self showAlertWithOneButton:@"xxx的评论"];
             [_baseVIew dealloc1];
             //写完发送事件之后添加一下就好了
             
@@ -245,10 +264,8 @@
     }
     
 }
-- (void)showAlertWithOneButton{
-    NSArray * aaa = [NSArray arrayWithObjects:@"今天是个好日子",@"明天是个好日子明天是个好日子明天是个好日子明天是个好日子明天是个好日子",@"后天也是个好日子",@"大后天不是个好日子",@"好日子好日子",@"1",@"2",@"3",@"4", nil];
-    //    [JCAlertView showOneButtonWithTitle:@"XXX评论" array:aaa ButtonType:JCAlertViewButtonTypeDefault ButtonTitle:@"发送" Click:nil];
-    [JCAlertView showOneButtonWithTitle:@"XXX评论" array:aaa];
+- (void)showAlertWithOneButton:(NSString*)title{
+    [JCAlertView showOneButtonWithTitle:title];
     
 }
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
@@ -256,9 +273,24 @@
     [_baseVIew  addObserver];
     return YES;
 }
--(void)AutolayOutWithMasonry
+-(void)addMessageVIew
 {
+   _msg_view = [[newMessage alloc]initWithFrame:CGRectMake(0,64 , YY_ININPONE5_WITH(320.0f), YY_ININPONE5_HEIGHT(20.0f))];
+    [_msg_view setHidden:YES];
+    [self.view addSubview:_msg_view];
+      [_msg_view.button addTarget:self action:@selector(showCommentAlert) forControlEvents:UIControlEventTouchUpInside];
     
 }
+-(void)showCommentAlert
+{
+    NSLog(@"年号 ");
+    JCAlertView * view = [[JCAlertView alloc]init];
+
+    commentsTable * table = [[commentsTable alloc]init];
+    view.UItable = table;
+    [_msg_view setHidden:YES];
+        [JCAlertView showOneButtonWithTitle:@"未读的评论"];
+}
+
 
 @end

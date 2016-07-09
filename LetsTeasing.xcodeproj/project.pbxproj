@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1803EB131D30B5CC002A11CC /* YYdataDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803EB121D30B5CC002A11CC /* YYdataDict.m */; };
+		1803EB161D30C69A002A11CC /* dict.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803EB151D30C69A002A11CC /* dict.m */; };
+		1803EB1C1D30DFB5002A11CC /* commentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803EB1B1D30DFB5002A11CC /* commentInfo.m */; };
+		1803EB1F1D30F40B002A11CC /* newMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803EB1E1D30F40B002A11CC /* newMessage.m */; };
+		1803EB221D313530002A11CC /* commentsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803EB211D31352F002A11CC /* commentsTable.m */; };
 		184952201D27492700E4DF3F /* YY_content_table.m in Sources */ = {isa = PBXBuildFile; fileRef = 1849521F1D27492700E4DF3F /* YY_content_table.m */; };
 		18841AC91D2907D800316FC8 /* YY_TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18841AC81D2907D800316FC8 /* YY_TextView.m */; };
 		18841AD91D2A222C00316FC8 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841ACC1D2A222C00316FC8 /* arrow.png */; };
@@ -89,6 +94,16 @@
 
 /* Begin PBXFileReference section */
 		0A37611A9EC0F3170ECB00D9 /* libPods-LetsTeasingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LetsTeasingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1803EB111D30B5CC002A11CC /* YYdataDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYdataDict.h; sourceTree = "<group>"; };
+		1803EB121D30B5CC002A11CC /* YYdataDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYdataDict.m; sourceTree = "<group>"; };
+		1803EB141D30C69A002A11CC /* dict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dict.h; sourceTree = "<group>"; };
+		1803EB151D30C69A002A11CC /* dict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dict.m; sourceTree = "<group>"; };
+		1803EB1A1D30DFB5002A11CC /* commentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentInfo.h; sourceTree = "<group>"; };
+		1803EB1B1D30DFB5002A11CC /* commentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentInfo.m; sourceTree = "<group>"; };
+		1803EB1D1D30F40B002A11CC /* newMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newMessage.h; sourceTree = "<group>"; };
+		1803EB1E1D30F40B002A11CC /* newMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newMessage.m; sourceTree = "<group>"; };
+		1803EB201D31352F002A11CC /* commentsTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentsTable.h; sourceTree = "<group>"; };
+		1803EB211D31352F002A11CC /* commentsTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentsTable.m; sourceTree = "<group>"; };
 		1849521E1D27492700E4DF3F /* YY_content_table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YY_content_table.h; sourceTree = "<group>"; };
 		1849521F1D27492700E4DF3F /* YY_content_table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YY_content_table.m; sourceTree = "<group>"; };
 		18841AC71D2907D800316FC8 /* YY_TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YY_TextView.h; sourceTree = "<group>"; };
@@ -181,8 +196,8 @@
 		18E89D861D2EA7450058414A /* photoChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoChange.m; sourceTree = "<group>"; };
 		18E89D881D2EA7990058414A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		18F3F33F1D26411600857FF9 /* JCAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JCAlertView.bundle; sourceTree = "<group>"; };
-		18F3F3401D26411600857FF9 /* JCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCAlertView.h; sourceTree = "<group>"; };
-		18F3F3411D26411600857FF9 /* JCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCAlertView.m; sourceTree = "<group>"; };
+		18F3F3401D26411600857FF9 /* JCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCAlertView.h; path = ../JCAlertView/JCAlertView.h; sourceTree = "<group>"; };
+		18F3F3411D26411600857FF9 /* JCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCAlertView.m; path = ../JCAlertView/JCAlertView.m; sourceTree = "<group>"; };
 		18F3F3441D26415800857FF9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		3549A01ED3DE6257DC10D133 /* libPods-LetsTeasing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LetsTeasing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43DA9EB818E16D6429248BB4 /* libPods-LetsTeasingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LetsTeasingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,8 +432,12 @@
 		18B0C13B1D253AA800E7BE2C /* model */ = {
 			isa = PBXGroup;
 			children = (
+				1803EB141D30C69A002A11CC /* dict.h */,
+				1803EB151D30C69A002A11CC /* dict.m */,
 				18E89D721D2C88D20058414A /* PersonalInfo.h */,
 				18E89D731D2C88D20058414A /* PersonalInfo.m */,
+				1803EB1A1D30DFB5002A11CC /* commentInfo.h */,
+				1803EB1B1D30DFB5002A11CC /* commentInfo.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -426,6 +445,8 @@
 		18B0C13C1D253AB400E7BE2C /* tableview */ = {
 			isa = PBXGroup;
 			children = (
+				18F3F3401D26411600857FF9 /* JCAlertView.h */,
+				18F3F3411D26411600857FF9 /* JCAlertView.m */,
 				18841AC71D2907D800316FC8 /* YY_TextView.h */,
 				18841AC81D2907D800316FC8 /* YY_TextView.m */,
 				1892F46E1D2A401E00FA63E2 /* View_for_Text.h */,
@@ -440,6 +461,12 @@
 				18E89D7C1D2CE5070058414A /* changeName.m */,
 				18E89D7E1D2E0DFC0058414A /* AlertTextBaseView.h */,
 				18E89D7F1D2E0DFC0058414A /* AlertTextBaseView.m */,
+				1803EB111D30B5CC002A11CC /* YYdataDict.h */,
+				1803EB121D30B5CC002A11CC /* YYdataDict.m */,
+				1803EB1D1D30F40B002A11CC /* newMessage.h */,
+				1803EB1E1D30F40B002A11CC /* newMessage.m */,
+				1803EB201D31352F002A11CC /* commentsTable.h */,
+				1803EB211D31352F002A11CC /* commentsTable.m */,
 			);
 			name = tableview;
 			sourceTree = "<group>";
@@ -485,8 +512,6 @@
 			isa = PBXGroup;
 			children = (
 				18F3F33F1D26411600857FF9 /* JCAlertView.bundle */,
-				18F3F3401D26411600857FF9 /* JCAlertView.h */,
-				18F3F3411D26411600857FF9 /* JCAlertView.m */,
 			);
 			path = JCAlertView;
 			sourceTree = SOURCE_ROOT;
@@ -782,11 +807,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F3F3431D26411600857FF9 /* JCAlertView.m in Sources */,
+				1803EB161D30C69A002A11CC /* dict.m in Sources */,
 				18B0C0A01D24E3D400E7BE2C /* YY_base_table.m in Sources */,
 				18B0C1391D2537D500E7BE2C /* Personal_centerViewController.m in Sources */,
 				188D98D51D2368E500A90DD7 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				188D98111D2344F300A90DD7 /* ViewController.m in Sources */,
 				188D98D31D2368E500A90DD7 /* MASViewConstraint.m in Sources */,
+				1803EB131D30B5CC002A11CC /* YYdataDict.m in Sources */,
 				188D98471D23462A00A90DD7 /* operation.m in Sources */,
 				188D980E1D2344F300A90DD7 /* AppDelegate.m in Sources */,
 				18E89D871D2EA7450058414A /* photoChange.m in Sources */,
@@ -797,6 +824,7 @@
 				188D98CE1D2368E500A90DD7 /* MASCompositeConstraint.m in Sources */,
 				18E89D741D2C88D20058414A /* PersonalInfo.m in Sources */,
 				18E89D7D1D2CE5070058414A /* changeName.m in Sources */,
+				1803EB1F1D30F40B002A11CC /* newMessage.m in Sources */,
 				188D98D21D2368E500A90DD7 /* MASViewAttribute.m in Sources */,
 				188D98D01D2368E500A90DD7 /* MASConstraintMaker.m in Sources */,
 				188D98E31D240EB900A90DD7 /* textCell.m in Sources */,
@@ -805,7 +833,9 @@
 				188D98D71D2368E500A90DD7 /* ViewController+MASAdditions.m in Sources */,
 				188D98CF1D2368E500A90DD7 /* MASConstraint.m in Sources */,
 				1892F4701D2A401E00FA63E2 /* View_for_Text.m in Sources */,
+				1803EB1C1D30DFB5002A11CC /* commentInfo.m in Sources */,
 				188D98D11D2368E500A90DD7 /* MASLayoutConstraint.m in Sources */,
+				1803EB221D313530002A11CC /* commentsTable.m in Sources */,
 				188D98171D2344F300A90DD7 /* LetsTeasing.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

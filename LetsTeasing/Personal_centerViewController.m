@@ -10,10 +10,11 @@
 #import "changeName.h"
 #import "MJRefresh.h"
 #define heigdtforSection (10.0f/568.0f)*SCREEN_HEIGHT
-#define HeightforCell 35.0f
+#define HeightforCell YY_ININPONE5_HEIGHT(35.0f)
 
 @interface Personal_centerViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
+    
     NSArray * List_name1;
     NSArray * List_name2;
     NSArray * List_name3;
@@ -53,10 +54,13 @@
        MJRefreshHeader * header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
     header.automaticallyChangeAlpha =YES;
 
+    
+    
     person_tabV.mj_header = header;
-   
     person_tabV.delegate = self;
     person_tabV.dataSource = self;
+    
+    
 //    person_tabV.scrollEnabled =NO; //设置tableview 不能滚动
     [self.view  addSubview:person_tabV];
     [self addLogOutButton:person_tabV];
@@ -108,7 +112,6 @@
     
     if(indexPath.section == 1)
     {
-        
         [self addbutton:cell button:Switch];
     }else if(indexPath.section == 0||indexPath.section == 2)
     {
@@ -170,12 +173,12 @@
 
     [Switch1 setOnTintColor:[UIColor blackColor]];
     Switch1.transform = CGAffineTransformMakeScale(0.6, 0.6);
-    [cell1.contentView addSubview:Switch1];
+    [cell1 addSubview:Switch1];
     
     [Switch1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.offset(YY_ININPONE5_HEIGHT(15.0f));
-        make.leftMargin.equalTo(cell1.contentView.mas_left).offset(YY_ININPONE5_WITH(282.0f));
-        make.topMargin.equalTo(cell1.contentView.mas_top).offset(YY_ININPONE5_HEIGHT(15.0f));
+        make.leftMargin.equalTo(cell1.mas_left).offset(YY_ININPONE5_WITH(280.0f));
+        make.topMargin.equalTo(cell1.mas_top).offset(YY_ININPONE5_HEIGHT(15.0f));
         make.width.offset(YY_ININPONE5_WITH(10.0f));
         
         
@@ -187,7 +190,7 @@
 {
     UIButton* logOut = [[UIButton alloc]initWithFrame:CGRectMake(0, 320, 320, 44)];
     [logOut setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    logOut.titleLabel.font = [UIFont systemFontOfSize: 14.0];
+    logOut.titleLabel.font = [UIFont systemFontOfSize: 15.0];
     logOut.titleLabel.textAlignment = NSTextAlignmentCenter;
     logOut.backgroundColor = [UIColor whiteColor];
     [logOut setTitle:@"退出当前登录" forState:(UIControlStateNormal)];
@@ -197,7 +200,7 @@
     [tableview addSubview:logOut];
     [logOut mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.offset(YY_ININPONE5_HEIGHT(44.0f));
-        make.topMargin.equalTo(tableview.mas_top).offset(YY_ININPONE5_HEIGHT(320.0f));
+        make.topMargin.equalTo(tableview.mas_top).offset(YY_ININPONE5_HEIGHT(35.0f)*6+heigdtforSection*5+YY_ININPONE5_HEIGHT(100.0f));
         make.width.offset(YY_ININPONE5_WITH(320.0f));
 
     }];
@@ -218,7 +221,7 @@
     //查找GameScore表
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"GameScore"];
     //查找GameScore表里面id为0c6db13c的数据
-    bgId = @"UVTaKKKP";
+//    bgId = @"UVTaKKKP";
     [bquery getObjectInBackgroundWithId:bgId block:^(BmobObject *object,NSError *error){
         if (error){
             //进行错误处理
@@ -239,7 +242,7 @@
 }
 -(void)getDAta
 {
-        [self getData:@"69B2444J" conString:@"playerName"];
+        [self getData:@"UVTaKKKP" conString:@"playerName"];
 }
 -(void)getString:(NSString*) string
 {

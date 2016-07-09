@@ -10,9 +10,9 @@
 
 @interface PersonalInfo : NSObject
 
-@property(nonatomic,assign) NSString * userName;
-@property(nonatomic,assign) NSString * passWord;
+@property(nonatomic,assign) NSString * ID;
+@property(nonatomic,assign) NSNumber * Num;
 @property(nonatomic,assign) NSString * Name;
 @property(nonatomic,assign) NSString * saidWord;
-
++(instancetype)initwithInfo:(NSMutableDictionary *) dict;
 @end

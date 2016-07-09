@@ -7,6 +7,7 @@
 //
 
 #import "YY_TextView.h"
+#import "PersonalInfo.h"
 #define JQMainScreenSize [UIScreen mainScreen].bounds.size
 #define JQPlacehoderPadding 8 //提示语与边框的距离(上下左)
 
@@ -20,13 +21,14 @@
         self.backgroundColor=[UIColor whiteColor];//默认背景色
         self.contentMode = UIViewContentModeCenter;
         self.layer.cornerRadius = 6;//圆角
+        self.font = [UIFont fontWithName:@"Arial" size:16];
 //        self.contentInset = UIEdgeInsetsMake(-3, 0, 0, 0);
         //2.添加子控件
         [self addSubView];
         [self addimage];
         //3.清空text:(可能在故事板中拖动的时候没有清空文本)
         self.text = @"";
-        
+        [self addMasonry];
         //3.监听textView文字通知
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
     }
@@ -46,7 +48,7 @@
     //->设置默认提示文字
     _placehoderLbl.text=(self.placeHoder.length>0?self.placeHoder:@"我也来吐槽");
     //->默认字体 == textView字体
-    _placehoderLbl.font=[UIFont fontWithName:@"Arial" size:13];
+    _placehoderLbl.font=[UIFont fontWithName:@"Arial" size:13.0];
     //->设置默认字体颜色
     _placehoderLbl.textColor=[UIColor lightGrayColor];
     //->设置默认字体透明度
@@ -55,12 +57,7 @@
     _placehoderLbl.numberOfLines=0;
     
     [self addSubview:_placehoderLbl];
-    [self.placehoderLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leftMargin.equalTo(self.mas_left).offset(YY_ININPONE5_WITH(30.0f));
-        make.height.offset(YY_ININPONE5_HEIGHT(30.0f));
-        make.rightMargin.equalTo(self.mas_right).offset(YY_ININPONE5_WITH(-30.0f));
-        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(5.0f));
-    }];
+   
 }
 -(void)addimage
 {
@@ -68,6 +65,8 @@
     _PlaceHoder_Image = [[UIImageView alloc]initWithImage:image highlightedImage:nil];
     [_PlaceHoder_Image setFrame:CGRectMake(10, 7, 15, 15)];
     [self addSubview:_PlaceHoder_Image];
+    [self addSubview:_placehoderLbl];
+  
 }
 
 #pragma mark 点击/响应通知方法
@@ -89,6 +88,21 @@
     _PlaceHoder_Image.hidden = (self.text.length!= 0);
         self.scrollEnabled =NO;
     }
+}
+-(void)addMasonry
+{
+    [self.PlaceHoder_Image mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leftMargin.equalTo(self.mas_left).offset(YY_ININPONE5_WITH(10.0f));
+        make.height.offset(YY_ININPONE5_HEIGHT(15.0f));
+        make.width.offset(YY_ININPONE5_WITH(15.0f));
+        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(15.0f));
+    }];
+    [self.placehoderLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leftMargin.equalTo(_PlaceHoder_Image.mas_right).offset(YY_ININPONE5_WITH(10.0f));
+        make.height.offset(YY_ININPONE5_HEIGHT(30.0f));
+        make.rightMargin.equalTo(self.mas_right).offset(YY_ININPONE5_WITH(-30.0f));
+        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(7.0f));
+    }];
 }
 
 

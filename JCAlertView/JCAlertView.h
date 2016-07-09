@@ -24,17 +24,18 @@ typedef NS_ENUM(NSInteger, JCAlertViewButtonType) {
 };
 
 @interface JCAlertView : UIView<UITextViewDelegate>
+@property(nonatomic,strong) UITableView * UItable;
 @property(nonatomic,strong) AlertTextBaseView * basetextView;
 @property(nonatomic,strong) NSMutableArray *ScellContent;
 @property (nonatomic,strong) YY_content_table * table;
 @property(nonatomic,assign) NSInteger multiple;
 
-
+-(void)addTable:(UITableView*)table;
 // ------------------------Show AlertView with title and message----------------------
 
 //
 //+ (void)showOneButtonWithTitle:(NSString *)title array:(NSArray *)Array ButtonType:(JCAlertViewButtonType)buttonType ButtonTitle:(NSString *)buttonTitle Click:(clickHandle)click;
-+(void)showOneButtonWithTitle:(NSString *)title array:(NSArray *)Array;
++(void)showOneButtonWithTitle:(NSString *)title;
 
 
 

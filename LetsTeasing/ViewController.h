@@ -11,6 +11,5 @@
 @interface ViewController : UIViewController
 @property(nonatomic,weak) NSIndexPath * index;
 
-
 @end
 
