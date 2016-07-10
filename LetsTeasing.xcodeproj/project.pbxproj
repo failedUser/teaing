@@ -22,7 +22,7 @@
 		18841ADE1D2A222C00316FC8 /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841AD11D2A222C00316FC8 /* message.png */; };
 		18841ADF1D2A222C00316FC8 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841AD21D2A222C00316FC8 /* qq.png */; };
 		18841AE01D2A222C00316FC8 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841AD31D2A222C00316FC8 /* search.png */; };
-		18841AE11D2A222C00316FC8 /* search副本.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841AD41D2A222C00316FC8 /* search副本.png */; };
+		18841AE11D2A222C00316FC8 /* searchfb.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841AD41D2A222C00316FC8 /* searchfb.png */; };
 		18841AE21D2A222C00316FC8 /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841AD51D2A222C00316FC8 /* weibo.png */; };
 		18841AE31D2A222C00316FC8 /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841AD61D2A222C00316FC8 /* weixin.png */; };
 		18841AE41D2A222C00316FC8 /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = 18841AD71D2A222C00316FC8 /* write.png */; };
@@ -67,6 +67,7 @@
 		18E89D7D1D2CE5070058414A /* changeName.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E89D7C1D2CE5070058414A /* changeName.m */; };
 		18E89D801D2E0DFC0058414A /* AlertTextBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E89D7F1D2E0DFC0058414A /* AlertTextBaseView.m */; };
 		18E89D871D2EA7450058414A /* photoChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E89D861D2EA7450058414A /* photoChange.m */; };
+		18F3834D1D31C9FE006DDF17 /* serachView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3834C1D31C9FE006DDF17 /* serachView.m */; };
 		18F3F3421D26411600857FF9 /* JCAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18F3F33F1D26411600857FF9 /* JCAlertView.bundle */; };
 		18F3F3431D26411600857FF9 /* JCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3F3411D26411600857FF9 /* JCAlertView.m */; };
 		18F3F3451D26415800857FF9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3F3441D26415800857FF9 /* Accelerate.framework */; };
@@ -116,7 +117,7 @@
 		18841AD11D2A222C00316FC8 /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
 		18841AD21D2A222C00316FC8 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
 		18841AD31D2A222C00316FC8 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
-		18841AD41D2A222C00316FC8 /* search副本.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search副本.png"; sourceTree = "<group>"; };
+		18841AD41D2A222C00316FC8 /* searchfb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchfb.png; sourceTree = "<group>"; };
 		18841AD51D2A222C00316FC8 /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo.png; sourceTree = "<group>"; };
 		18841AD61D2A222C00316FC8 /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
 		18841AD71D2A222C00316FC8 /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
@@ -195,6 +196,8 @@
 		18E89D851D2EA7450058414A /* photoChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoChange.h; sourceTree = "<group>"; };
 		18E89D861D2EA7450058414A /* photoChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoChange.m; sourceTree = "<group>"; };
 		18E89D881D2EA7990058414A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		18F3834B1D31C9FE006DDF17 /* serachView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serachView.h; sourceTree = "<group>"; };
+		18F3834C1D31C9FE006DDF17 /* serachView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = serachView.m; sourceTree = "<group>"; };
 		18F3F33F1D26411600857FF9 /* JCAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JCAlertView.bundle; sourceTree = "<group>"; };
 		18F3F3401D26411600857FF9 /* JCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCAlertView.h; path = ../JCAlertView/JCAlertView.h; sourceTree = "<group>"; };
 		18F3F3411D26411600857FF9 /* JCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCAlertView.m; path = ../JCAlertView/JCAlertView.m; sourceTree = "<group>"; };
@@ -278,7 +281,7 @@
 				18841AD11D2A222C00316FC8 /* message.png */,
 				18841AD21D2A222C00316FC8 /* qq.png */,
 				18841AD31D2A222C00316FC8 /* search.png */,
-				18841AD41D2A222C00316FC8 /* search副本.png */,
+				18841AD41D2A222C00316FC8 /* searchfb.png */,
 				18841AD51D2A222C00316FC8 /* weibo.png */,
 				18841AD61D2A222C00316FC8 /* weixin.png */,
 				18841AD71D2A222C00316FC8 /* write.png */,
@@ -432,6 +435,8 @@
 		18B0C13B1D253AA800E7BE2C /* model */ = {
 			isa = PBXGroup;
 			children = (
+				1803EB111D30B5CC002A11CC /* YYdataDict.h */,
+				1803EB121D30B5CC002A11CC /* YYdataDict.m */,
 				1803EB141D30C69A002A11CC /* dict.h */,
 				1803EB151D30C69A002A11CC /* dict.m */,
 				18E89D721D2C88D20058414A /* PersonalInfo.h */,
@@ -461,12 +466,12 @@
 				18E89D7C1D2CE5070058414A /* changeName.m */,
 				18E89D7E1D2E0DFC0058414A /* AlertTextBaseView.h */,
 				18E89D7F1D2E0DFC0058414A /* AlertTextBaseView.m */,
-				1803EB111D30B5CC002A11CC /* YYdataDict.h */,
-				1803EB121D30B5CC002A11CC /* YYdataDict.m */,
 				1803EB1D1D30F40B002A11CC /* newMessage.h */,
 				1803EB1E1D30F40B002A11CC /* newMessage.m */,
 				1803EB201D31352F002A11CC /* commentsTable.h */,
 				1803EB211D31352F002A11CC /* commentsTable.m */,
+				18F3834B1D31C9FE006DDF17 /* serachView.h */,
+				18F3834C1D31C9FE006DDF17 /* serachView.m */,
 			);
 			name = tableview;
 			sourceTree = "<group>";
@@ -647,7 +652,7 @@
 				18841ADA1D2A222C00316FC8 /* arrow_b.png in Resources */,
 				18841ADE1D2A222C00316FC8 /* message.png in Resources */,
 				18841AD91D2A222C00316FC8 /* arrow.png in Resources */,
-				18841AE11D2A222C00316FC8 /* search副本.png in Resources */,
+				18841AE11D2A222C00316FC8 /* searchfb.png in Resources */,
 				18841AE21D2A222C00316FC8 /* weibo.png in Resources */,
 				18841ADC1D2A222C00316FC8 /* delete.png in Resources */,
 				188D98CD1D2368E500A90DD7 /* Info.plist in Resources */,
@@ -830,6 +835,7 @@
 				188D98E31D240EB900A90DD7 /* textCell.m in Sources */,
 				18E89D801D2E0DFC0058414A /* AlertTextBaseView.m in Sources */,
 				188D98D41D2368E500A90DD7 /* NSArray+MASAdditions.m in Sources */,
+				18F3834D1D31C9FE006DDF17 /* serachView.m in Sources */,
 				188D98D71D2368E500A90DD7 /* ViewController+MASAdditions.m in Sources */,
 				188D98CF1D2368E500A90DD7 /* MASConstraint.m in Sources */,
 				1892F4701D2A401E00FA63E2 /* View_for_Text.m in Sources */,

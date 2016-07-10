@@ -30,7 +30,6 @@ typedef NS_ENUM(NSInteger, JCAlertViewButtonType) {
 @property (nonatomic,strong) YY_content_table * table;
 @property(nonatomic,assign) NSInteger multiple;
 
--(void)addTable:(UITableView*)table;
 // ------------------------Show AlertView with title and message----------------------
 
 //

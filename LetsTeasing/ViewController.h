@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "serachView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<searchResults,CustomSearchBarDataSouce,CustomSearchBarDelegate>
 @property(nonatomic,weak) NSIndexPath * index;
+//search
+@property (nonatomic, strong) serachView * customSearchBar;
+
+@property (nonatomic, strong) UITableView * testTableview;
+
+@property (nonatomic, strong) NSMutableArray * myData;
+
+
+@property (nonatomic, strong) NSMutableArray * resultFileterArry;
 
 @end
 

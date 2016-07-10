@@ -107,6 +107,7 @@
 //    _yy_table.cellContent = ScellContent;
     //整理逻辑的关键牌，我想写个监听
     _yy_table.backgroundColor = [UIColor grayColor];
+ 
     NSInteger  heighett = 0 ;
     [self longGesture:YES];
 //       [self TavbleViewCellSeletShowAlert:YES];
@@ -152,6 +153,13 @@
 -(void)searchToSm
 {
     NSLog(@"查找什么东西");
+    [_baseVIew dealloc1];
+    [self.resultFileterArry removeAllObjects];
+    self.customSearchBar = [serachView show:CGPointMake(0, 0) andHeight:SCREEN_HEIGHT];
+    self.customSearchBar.searchResults = self;
+    self.customSearchBar.DataSource = self;
+    self.customSearchBar.delegate = self;
+    [self.navigationController.view insertSubview:self.customSearchBar aboveSubview:self.navigationController.navigationBar];
     
 }
 - (NSInteger) heightForString:(UITextView *)textView andWidth:(float)width{
@@ -252,9 +260,6 @@
         if(indexPath == nil) NSLog(@"nimeia");
         else{
             [_baseVIew.yy_text resignFirstResponder];
-//            JCAlertView * view = [[JCAlertView alloc]init];
-//            YY_content_table * ConTable = [[YY_content_table alloc]init];
-//            [view addTable:ConTable];
             [self showAlertWithOneButton:@"xxx的评论"];
             [_baseVIew dealloc1];
             //写完发送事件之后添加一下就好了
@@ -266,6 +271,7 @@
 }
 - (void)showAlertWithOneButton:(NSString*)title{
     [JCAlertView showOneButtonWithTitle:title];
+
     
 }
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
@@ -284,13 +290,81 @@
 -(void)showCommentAlert
 {
     NSLog(@"年号 ");
-    JCAlertView * view = [[JCAlertView alloc]init];
-
-    commentsTable * table = [[commentsTable alloc]init];
-    view.UItable = table;
+//    JCAlertView * view = [[JCAlertView alloc]init];
+//
+//    commentsTable * table = [[commentsTable alloc]init];
+//    view.UItable = table;
     [_msg_view setHidden:YES];
         [JCAlertView showOneButtonWithTitle:@"未读的评论"];
 }
+//显示searchbar
+-(NSMutableArray *)resultFileterArry {
+    if (!_resultFileterArry) {
+        _resultFileterArry = [NSMutableArray new];
+    }
+    return _resultFileterArry;
+}
+
+
+-(NSMutableArray *)myData {
+    if (!_myData) {
+        _myData = [NSMutableArray new];
+//  
+  _myData = [_yy_table.data NameInTheDict:_yy_table.dict];
+//              NSLog(@"%@",_myData);
+//        [_myData addObject:@"hello"];
+//        [_myData addObject:@"nihaoa"];
+//        [_myData addObject:@"yes"];
+//        [_myData addObject:@"areyousure"];
+//        [_myData addObject:@"A"];
+//        [_myData addObject:@"AR"];
+//        [_myData addObject:@"G"];
+//        [_myData addObject:@"J"];
+//        [_myData addObject:@"O"];
+//        [_myData addObject:@"K"];
+//        [_myData addObject:@"Y"];
+//        [_myData addObject:@"AY"];
+//        [_myData addObject:@"爱"];
+//        [_myData addObject:@"啊"];
+//        [_myData addObject:@"唉"];
+//        [_myData addObject:@"哎"];
+        [_testTableview reloadData];
+    }
+    return _myData;
+}
+/**第一步根据输入的字符检索 必须实现*/
+-(void)CustomSearch:(serachView *)searchBar inputText:(NSString *)inputText {
+    [self.resultFileterArry removeAllObjects];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",inputText];
+    //这里是要查询某个字符串，就先查找名字吧，先得到所有的名字，生成一个数组，
+    NSArray * arry = [self.myData filteredArrayUsingPredicate:predicate];
+    //然后把数据放到结果这个数组里面，就是数组加数组
+    for (NSString * taxChat in arry) {
+        [self.resultFileterArry addObject:taxChat];
+    }
+}
+// 设置显示列的内容
+-(NSInteger)searchBarNumberOfRowInSection {
+    return self.resultFileterArry.count;
+}
+// 设置显示没行的内容
+-(NSString *)CustomSearchBar:(serachView *)menu titleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //把内容输入到查询得到的cell中这个 时候我们将传进去一个带有数据字典的字典
+    return self.resultFileterArry[indexPath.row];
+}
+- (void)CustomSearchBar:(serachView *)segment didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"---->>>>>>>>>%ld",indexPath.row);
+}
+
+-(void)CustomSearchBar:(serachView *)segment cancleButton:(UIButton *)sender {
+    
+}
+-(NSString *)CustomSearchBar:(serachView *)searchBar imageNameForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Search_noraml";
+}
+
+
+
 
 
 @end

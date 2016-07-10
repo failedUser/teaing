@@ -32,6 +32,7 @@
     _button = [UIButton buttonWithType:UIButtonTypeCustom];
     _button.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     _button.backgroundColor = [UIColor lightGrayColor];
+    _button.titleLabel.font = YYSYSTEM_FONT;
     [self addSubview:_button];
   
 }

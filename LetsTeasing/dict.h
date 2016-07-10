@@ -15,4 +15,5 @@
 -(void)DICTaddDIct:(NSMutableDictionary*)dict key:(NSString*)num;
 -(NSMutableDictionary*)neirong;
 -(NSInteger)numberOfUnReadNews:(NSMutableDictionary *)dict;
+-(NSMutableArray *)NameInTheDict:(NSMutableDictionary *)dict;
 @end

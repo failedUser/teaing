@@ -30,4 +30,16 @@
 #define YY_ININPONE5_HEIGHT(x)    ([[UIScreen mainScreen] bounds].size.height)*x/568.0f
 
 #endif
+
+#ifndef __BackGroundColor
+
+#define YYColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#endif
+
+
+
+#ifndef __FONT_SYSTEM__
+#define  YYBUTTON_FONT  [UIFont fontWithName:@"Arial" size:15.0f];
+#define  YYSYSTEM_FONT  [UIFont fontWithName:@"Arial" size:13.0f];
+#endif
 #endif /* PrefixHeader_pch */

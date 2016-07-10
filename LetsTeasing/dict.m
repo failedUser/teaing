@@ -62,5 +62,19 @@
     
     return num;
 }
+-(NSMutableArray *)NameInTheDict:(NSMutableDictionary *)dict
+{
+    NSMutableArray * NameArray = [NSMutableArray new];
+
+    
+    for (int i =0; i< dict.count; i++) {
+        NSString * str = [NSString stringWithFormat:@"%d",i];
+        NSMutableDictionary * dict1 = [dict objectForKey:str];
+        [NameArray addObject:[dict1 objectForKey:@"playerName"]];
+        NSLog(@"%@",NameArray);
+        }
+return NameArray;
+ }
+
 
 @end

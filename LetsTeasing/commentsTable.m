@@ -102,12 +102,6 @@
 //    [JCAlertView showOneButtonWithTitle:@"XXX评论"];
     
 }
-//-(void)initDict
-//{
-//    _data = [[dict alloc]init];
-//    _dict = [_data neirong];
-//    
-//}
 //计算行高
 - (NSInteger) heightForString:(UILabel *)textView andWidth:(float)width{
     
