@@ -20,6 +20,7 @@
     self = [super initWithFrame:frame style:UITableViewStyleGrouped];
     self.delegate =self;
     self.dataSource = self;
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
     return self;
 }
 //-(void)touchesBegan

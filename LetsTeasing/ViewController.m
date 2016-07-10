@@ -49,17 +49,6 @@
 @end
 
 @implementation ViewController
--(void)viewWillAppear:(BOOL)animated
-{
-    //添加键盘的监听事件
-    
-    //注册通知,监听键盘弹出事件
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-    
-////    注册通知,监听键盘消失事件
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHidden) name:UIKeyboardDidHideNotification object:nil];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self reloadInputViews];
@@ -88,7 +77,7 @@
 
     //导航栏左边按钮
 //    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(selfCenter)];
-    UIImage * image = [self scaleImage:[UIImage imageNamed:@"me.png"] toScale:0.3];
+    UIImage * image = [self scaleImage:[UIImage imageNamed:@"personal.png"] toScale:0.7];
    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStyleDone target:self action:@selector(selfCenter) ];
     //导航栏左边按钮颜色
@@ -311,23 +300,6 @@
         _myData = [NSMutableArray new];
 //  
   _myData = [_yy_table.data NameInTheDict:_yy_table.dict];
-//              NSLog(@"%@",_myData);
-//        [_myData addObject:@"hello"];
-//        [_myData addObject:@"nihaoa"];
-//        [_myData addObject:@"yes"];
-//        [_myData addObject:@"areyousure"];
-//        [_myData addObject:@"A"];
-//        [_myData addObject:@"AR"];
-//        [_myData addObject:@"G"];
-//        [_myData addObject:@"J"];
-//        [_myData addObject:@"O"];
-//        [_myData addObject:@"K"];
-//        [_myData addObject:@"Y"];
-//        [_myData addObject:@"AY"];
-//        [_myData addObject:@"爱"];
-//        [_myData addObject:@"啊"];
-//        [_myData addObject:@"唉"];
-//        [_myData addObject:@"哎"];
         [_testTableview reloadData];
     }
     return _myData;

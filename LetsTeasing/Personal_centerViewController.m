@@ -10,7 +10,7 @@
 #import "changeName.h"
 #import "MJRefresh.h"
 #define heigdtforSection (10.0f/568.0f)*SCREEN_HEIGHT
-#define HeightforCell YY_ININPONE5_HEIGHT(35.0f)
+#define HeightforCell YY_ININPONE5_HEIGHT(44.0f)
 
 @interface Personal_centerViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -136,7 +136,7 @@
     [cell.contentView addSubview:_self_Name_lbl];
     
     [_self_Name_lbl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.offset(YY_ININPONE5_HEIGHT(35.0f));
+        make.height.offset(YY_ININPONE5_HEIGHT(44.0f));
 
         make.rightMargin.equalTo(cell.contentView.mas_right).offset(YY_ININPONE5_WITH(-30.0f));
         make.width.offset(YY_ININPONE5_WITH(180.0f));
@@ -208,7 +208,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YY_ININPONE5_HEIGHT(HeightforCell);
+    return HeightforCell;
 }
 
 - (void)didReceiveMemoryWarning {

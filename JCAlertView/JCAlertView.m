@@ -313,7 +313,6 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
 //妈的智障，clicks数组都被我删了，你们还有什么用
 - (void)alertBtnClick{
 
-    NSLog(@"确定执行的这个函数？");
     [self dismissAlertWithCompletion:^{
     }];
 
@@ -386,7 +385,7 @@ NSString *const JCAlertViewWillShowNotification = @"JCAlertViewWillShowNotificat
         UIButton * view =  [[UIButton alloc]initWithFrame:CGRectMake(YY_ININPONE5_WITH(290.0f)- YY_ININPONE5_WITH(30.0), 0 , YY_ININPONE5_HEIGHT(20.0), YY_ININPONE5_HEIGHT(20.0))];
 //        view.backgroundColor = [UIColor redColor];
 //    _basetextView.popView =self;
-    [view setImage:[UIImage imageNamed:@"delete.png"] forState:UIControlStateNormal];
+    [view setImage:[UIImage imageNamed:@"delete1.png"] forState:UIControlStateNormal];
     [view addTarget:self action:@selector(alertBtnClick) forControlEvents:UIControlEventTouchUpInside];
 //        view.popView = self;
         [self addSubview:view];

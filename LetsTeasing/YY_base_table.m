@@ -67,7 +67,7 @@
 //    cell.TextLabel.text = _cellContent[indexPath.row];
     cell.TextLabel.numberOfLines = 0;
     CGFloat  height = [self heightForString:cell.TextLabel andWidth:YY_ININPONE5_WITH(300.0f)];
-    [cell.TextLabel setFrame:CGRectMake(YY_ININPONE5_WITH(10.0f), YY_ININPONE5_HEIGHT(18.0f) , YY_ININPONE5_WITH(300.0f), height)];
+    [cell.TextLabel setFrame:CGRectMake(YY_ININPONE5_WITH(10.0f), YY_ININPONE5_HEIGHT(18.0f) , YY_ININPONE5_WITH(300.0f), height+YY_ININPONE5_HEIGHT(1.0f))];
     //设置cell不能被选中
     cell.tag = 10010;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -88,7 +88,7 @@
     label.autoresizingMask =YES;
     CGFloat  height = [self heightForString:label andWidth:YY_ININPONE5_WITH(300.0f)];
     _heightTable = YY_ININPONE5_HEIGHT(height)+YY_ININPONE5_HEIGHT(18.0f);
-    return YY_ININPONE5_HEIGHT(height)+YY_ININPONE5_HEIGHT(18.0f);
+    return YY_ININPONE5_HEIGHT(height)+YY_ININPONE5_HEIGHT(20.0f);
 
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

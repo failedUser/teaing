@@ -28,16 +28,11 @@
         
         NSString *dateString = [dateFormatter stringFromDate:currentDate];
         _dataLabel.text =dateString;
-
-
         //需要顶端对其？？
+  
         
-        
-        _namelabel.textColor = [UIColor redColor];
+        _namelabel.textColor = NANECOLOR;
         _dataLabel.textColor =[UIColor lightGrayColor];
-        
-//        _TextLabel.textAlignment =NSTextAlignmentJustified;
-//        [_TextLabel setContentMode:UIViewContentModeTop];
        
         //修改字体的大小
         UIFont *newFont = [UIFont fontWithName:@"Arial" size:13.0];

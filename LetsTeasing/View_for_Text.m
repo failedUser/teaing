@@ -104,16 +104,17 @@
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leftMargin.equalTo(self.mas_left).offset(YY_ININPONE5_WITH(10.0f));
         make.height.offset(1);
+        make.width.offset(YY_ININPONE5_WITH(300.0f));
         make.rightMargin.equalTo(self.mas_right).offset(YY_ININPONE5_WITH(-10.0f));
-        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(38.0f));
+        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(35.0f));
     }];
     
     
     [self.yy_text mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leftMargin.equalTo(self.mas_left).offset(YY_ININPONE5_WITH(5.0f));
-        make.height.offset(YY_ININPONE5_HEIGHT(32.0f));
+        make.leftMargin.equalTo(self.mas_left).offset(YY_ININPONE5_WITH(8.0f));
+        make.height.offset(YY_ININPONE5_HEIGHT(30.0f));
         make.rightMargin.equalTo(self.mas_right).offset(YY_ININPONE5_WITH(-35.0f));
-        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(8.0f));
+        make.topMargin.equalTo(self.mas_top).offset(YY_ININPONE5_HEIGHT(5.0f));
     }];
 }
 //添加监听

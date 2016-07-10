@@ -15,6 +15,6 @@
 -(void)DICTaddDIct:(NSMutableDictionary*)Com_dict key:(NSString*)com_Dict;
 -(NSMutableDictionary*)neirong;
 //-(NSInteger)numberOfUnReadNews;
--(NSInteger)numberOfUnReadNews:(NSMutableDictionary *)dict;
+//-(NSInteger)numberOfUnReadNews:(NSMutableDictionary *)dict;
 
 @end

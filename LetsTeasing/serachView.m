@@ -153,6 +153,6 @@
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    return YY_ININPONE5_HEIGHT(44.0f);
 }
 @end
